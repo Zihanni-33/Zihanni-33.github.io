@@ -1,0 +1,79 @@
+body{
+  background: url("img/Background.png");
+  background-attachment:fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+
+.nav-link{
+    padding:15px 5px;
+    transition:0.2s;
+    color:(143,133,168);
+    font-size:18px;
+  }
+
+
+.nav-item::after{
+    content:'';
+    display:block;
+    width:0px;
+    height:2.5px;
+    background:white;
+    transition: 0.2s;
+    margin-top:-10px;
+}
+.nav-item:hover::after{width:100%;}
+
+
+.nfive:hover{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nfive{
+  font-size: 22px;
+  margin-left:13px;
+}
+
+
+.navbar-nav .nav-link {
+    color:(143,133,168);
+    ;
+}
+
+.nav-link{
+    padding:15px 5px;
+    transition:0.2s;
+    color:(143,133,168);
+
+  }
+
+
+.nav-item::after{
+    content:'';
+    display:block;
+    width:0px;
+    height:2.5px;
+    background:white;
+    transition: 0.2s;
+    margin-top:-10px;
+}
+.nav-item:hover::after{width:100%;}
+
+
+.nfive:hover{
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nfive{
+  font-size: 22px;
+  margin-left:13px;
+}
+
+
+.move{
+  max-width: 100%;
+  height: auto;
+}
