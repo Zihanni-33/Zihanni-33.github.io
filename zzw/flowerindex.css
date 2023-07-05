@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* 解决失真 */
+  image-rendering: -webkit-optimize-contrast;
+}
+body {
+  /*background: url(../img/index/纯背景.png) no-repeat top center;*/
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 1024px;
+  max-width: 100%;
+  height: 100vh;
+}
+
+body .main .yuewu .beijing {
+  width: 50%;
+  height: 100%;
+  padding-bottom: 17%;
+  margin: 0 auto;
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  background: url(../img/index/yuewu1.png) no-repeat;
+  background-size: 100% 100%;
+  animation: rotate1 15s linear infinite;
+  z-index: -9;
+}
+
+@keyframes rotate1 {
+  form {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
