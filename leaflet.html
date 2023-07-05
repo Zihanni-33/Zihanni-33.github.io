@@ -1,0 +1,72 @@
+var marker = L.marker([51.5, -0.09]).addTo(map);
+var circle = L.circle([51.508, -0.11], {
+  color: 'red',
+  fillColor: '#f03',
+  fillOpacity: 0.5,
+  radius: 500
+}).addTo(map);
+var polygon = L.polygon([
+ [51.509, -0.08],
+[51.503, -0.06],
+[51.51, -0.047]
+]).addTo(map);
+var marker = L.marker([51.5, -0.09]).addTo(map);
+var circle = L.circle([51.508, -0.11], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500}).addTo(map);
+
+var polygon = L.polygon([
+[51.509, -0.08],
+[51.503, -0.06],
+[51.51, -0.047]]).addTo(map);
+
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();circle.bindPopup("I am a circle.");polygon.bindPopup("I am a polygon.");
+L.marker([51.5, -0.09]).addTo(map)
+.bindPopup("<b>Hello world!</b><br/>I am a popup.").openPopup();
+L.circle([51.508, -0.11], 500, {
+  color: 'red',
+  fillColor: '#f03',
+  fillOpacity: 0.5
+}).addTo(map).bindPopup("I am a circle.");
+L.polygon([
+[51.509, -0.08],
+[51.503, -0.06],
+[51.51, -0.047]
+]).addTo(map).bindPopup("I am a polygon.");
+
+<button type="button" class="btn btn-warning" onclick="show_districts();">Show Districts</button>
+function show_districts(){
+  L.marker([51.5, -0.09]).addTo(map).bindPopup("<b>Hello World!</b><br />I am a popup.").openPopup();
+}
+
+function show_districts(){
+  L.marker([22.287111, 114.191667]).addTo(map)
+  .bindPopup('<a href="https://en.wikipedia.org/wiki/North_Point" target="_blank">'+ '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/City_Garden.jpg/250px-City_Garden.jpg" style="width:80px;height:80px;"><br>' +'North_Point'+'</a>').openPopup();
+}
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+var items = [];var airtable_read_endpoint = "https://api.airtable.com/v0/app1GZXsjINV22oO2/Table%201?api_key=YourAPI_Key";
+var data = [];
+$.getJSON(airtable_read_endpoint, function(result){
+   $.each(result.records, function(key,value){
+     items = {};
+     items["name"] = value.fields.Name;
+     items["url"] = value.fields.url;
+     items["image_url"] = value.fields.image_url;
+     items["latitud"] = value.fields.Lat;
+     items["longitud"] = value.fields.Lng;
+     data.push(items);
+     console.log(items);
+   }); // end .each
+ }); // end getJSON
+ function show_districts(){
+   for (var i in data) {
+     var latlng = L.latLng({ lat: data[i].latitud, lng: data[i].longitud });
+     L.marker( latlng )
+     .bindPopup( '<a href="' + data[i].url + '" target="_blank">' + '<img src="' + data[i].image_url+'" width = "80px"><br>'+data[i].name + '</a>')
+     .addTo(map);
+   }
+ }

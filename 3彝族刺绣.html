@@ -1,0 +1,365 @@
+<!-- /*
+* Template Name: Style
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="nuosu1.ico">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="free template, bootstrap, bootstrap4" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/feather/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""> </script>
+
+  <title>非遗技艺 | 彝族刺绣技艺</title>
+  <style media="screen">
+    :root {
+      --color-text: navy;
+      --color-bg-accent: #ecdcc0;
+      --size: clamp(10rem, 1rem + 40vmin, 30rem);
+      --gap: calc(var(--size) / 14);
+      --duration: 60s;
+      --scroll-start: 0;
+      --scroll-end: calc(-100% - var(--gap));
+    }
+
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      gap: var(--gap);
+      mask-image: linear-gradient(
+        var(--mask-direction, to right),
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 1) 20%,
+        hsl(0 0% 0% / 1) 80%,
+        hsl(0 0% 0% / 0)
+      );
+    }
+
+    .marquee__group {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: var(--gap);
+      min-width: 100%;
+      animation: scroll-x var(--duration) linear infinite;
+    }
+
+    @keyframes scroll-x {
+      from {
+        transform: translateX(var(--scroll-start));
+      }
+      to {
+        transform: translateX(var(--scroll-end));
+      }
+    }
+
+    @keyframes scroll-y {
+      from {
+        transform: translateY(var(--scroll-start));
+      }
+      to {
+        transform: translateY(var(--scroll-end));
+      }
+    }
+
+    /* Element styles */
+    .marquee svg {
+      display: grid;
+      place-items: center;
+      width: var(--size);
+      fill: var(--color-text);
+      background: var(--color-bg-accent);
+      aspect-ratio: 16/9;
+      padding: calc(var(--size) / 10);
+      border-radius: 0.5rem;
+    }
+
+    .marquee--vertical svg {
+      aspect-ratio: 1;
+      width: calc(var(--size) / 1.5);
+      padding: calc(var(--size) / 6);
+    }
+
+        .center {
+          text-align: center;
+        }
+
+        .pagination {
+          display: inline-block;
+        }
+
+        .pagination a {
+          color: black;
+          float: left;
+          padding: 8px 16px;
+          text-decoration: none;
+          transition: background-color .3s;
+          border: 1px solid #ddd;
+          margin: 0 4px;
+        }
+
+        .pagination a.active {
+          background-color: #b78d12;
+          color: white;
+          border: 1px solid #b78d12;
+        }
+
+        .pagination a:hover:not(.active) {background-color: #ddd;}
+        .imageBox {
+         position: relative;
+         float: left;
+       }
+
+       .imageBox .hoverImg {
+         position: absolute;
+         left: 0;
+         top: 0;
+         display: none;
+       }
+
+       .imageBox:hover .hoverImg {
+         display: block;
+       }
+  </style>
+</head>
+<body>
+
+  <div class="lines-wrap">
+    <div class="lines-inner">
+      <div class="lines"></div>
+    </div>
+  </div>
+  <!-- END lines -->
+
+  <div class="main">
+    <div class="item1 yuewu">
+      <div class="beijing"></div>
+    </div>
+  </div>
+
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icofont-close js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+
+    <nav class="site-nav" style="font-family:SimSun;">
+      <div class="container" >
+        <div class="site-navigation">
+
+          <ul class="js-clone-nav d-none d-lg-inline-noone text-left site-menu">
+              <li style="font-family:SimSun;"><a href="zzw/Tank/portfolio-fullscreen-slider.html">首页</a></li>
+            <li style="font-family:SimSun;"><a href="我们的故事/index.html">我们的故事</a></li>
+            <li class="has-children" style="font-family:SimSun;">
+              <a >非遗技艺</a>
+              <ul class="dropdown">
+                <li><a href="1擀毡.html">擀毡技艺</a></li>
+                <li ><a href="2毛纺织.html">毛纺织技艺</a></li>
+                <li><a href="3彝族刺绣.html">彝族刺绣</a></li>
+                <li><a href="4漆器技艺.html">彝族漆器髹饰技艺</a></li>
+
+
+
+              </ul>
+            </li>
+            <li style="font-family:SimSun;"><a href="final_project/her_story.html" >关于她</a></li>
+            <li style="font-family:SimSun;"><a href="zzw/chuanda.html">新品穿搭指南</a></li>
+            <li style="font-family:SimSun;"><a href="nuosu.html">产品商城</a></li>
+            <li style="font-family:SimSun;"><a href="final_project/contact.html">联系我们</a></li>
+          </ul>
+
+          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-block" data-toggle="collapse" data-target="#main-navbar">
+            <span></span>
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+  <div class="custom-hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h1 class="hero-heading">彝族刺绣</h1>
+          <!--div  class="line js-line mx-auto mb-3 my-3"></div>
+          <p class="sub-text">By Joefrey Mahusay <span class="mx-3">&bullet;</span> on Jun 13, 2021 </p-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container article">
+      <div class="row justify-content-center align-items-stretch">
+        <article class="col-lg-8 order-lg-2 px-lg-5">
+
+          <h3 style="color:#b78d12;"><strong>缘起</strong></h3>
+          <p>“不长树的山不算山，不会绣花的女子不算彝家女。”</p>
+          <p>彝族女孩子自幼学习刺绣，从简单的花边、单一的绣片开始学起，慢慢学习绣制手帕、鞋垫，再到头巾、围腰，一直学到绣制节日盛装、婚嫁礼服。</p>
+          <p>闲暇时间，彝家女子就会三五成群地围坐在一起，一边谈笑风生，一边飞针走线，凭着简单的花针和灵巧的双手，将自己对美好爱情和幸福生活的向往一针一线地绣进绚丽多彩、姿态万千的图案里，纺织出一个个梦幻般的世界。</p>
+          <p>彝族刺绣，2008年经国务院批准列入第二批国家级非物质文化遗产名录。彝族刺绣种类繁多、丰富多姿、制作精美、异彩纷呈，是彝族传统文化的一种体现，是彝族服饰中不可缺少的部分。</p>
+          <p>彝族刺绣是彝族人民在历史长河中传承先辈文化的一种形式。它有着悠久的历史。 </p>
+
+          <h3>&emsp;</h3>
+
+          <h3 style="color:#b78d12;"><strong>步骤</strong></h3>
+          <p>在构图上，有对称排列也有参差交错，有重叠构架也有流线贯通。</p>
+          <p>在配色上，大胆灵活，以体现富贵喜庆气息的红、黄、黑为主色调，又兼用表现力丰富的其他各种颜色，充分显现出彝家人对美好生活的向往。</p>
+          <p>在纹样上，主要分抽象、具象两种刺绣纹样，抽象纹样将自然元素通过点线面来进行变形和组合，形成有规律的几何纹样，如水波纹、云彩纹等，具象纹样一般是动植物和生产生活器具类的纹样，如羊角纹、指甲印纹、窗格纹、火镰纹等。</p>
+
+
+        </article>
+
+        <div class="col-md-12 col-lg-1 order-lg-1">
+          <div class="share sticky-top">
+
+            <ul class="list-unstyled share-article">
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+              <li><a href="#"><span class="icon-pinterest"></span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-5 mb-lg-0 order-lg-3 imageBox">
+
+
+          <div class="imageInn">
+            <img src="img/展示3.1.jpg" alt="Default Image" class="img-fluid rounded">
+          </div>
+          <div class="hoverImg">
+            <img src="img/zhanshi3.1.jpg" alt="Profile Image" class="img-fluid rounded">
+          </div>
+          <h3>&emsp;</h3>
+          <img src="img/展示3.2.jpg" alt="Image" class="img-fluid rounded">
+          <h3>&emsp;</h3>
+          <img src="img/展示3.3.jpg" alt="Image" class="img-fluid rounded">
+          <h3>&emsp;</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="center" style="padding-bottom:10rem;padding-top:-2rem;">
+  <div class="pagination">
+  <a href="2毛纺织.html">«</a>
+  <a href="1擀毡.html">1</a>
+  <a href="2毛纺织.html">2</a>
+  <a href="3彝族刺绣.html" class="active">3</a>
+  <a href="4漆器技艺.html">4</a>
+  <a href="4漆器技艺.html">»</a>
+  </div>
+</div>
+      <div class="custom-hero section">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div id="map" style="height:400px;width:700px;"></div>
+              <h3>&emsp;</h3>
+              <div class="col-lg-6">
+                <h3>&emsp;</h3>
+                <h1>一起探索诺苏之旅吧！</h1>
+                <p>诺苏——是来自四川大凉山的彝族；他们勤劳朴实，拥有最古老神秘的文化。那些花纹、图案、文字，似乎还有说不完的故事想要向你展示...</p >
+                <a href="final_project/contact.html" class="btn btn-primary">Get In Touch</a>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
+          <div class="site-footer">
+            <div class="container">
+              <div class="row justify-content-center text-center copyright">
+                <div class="col-md-8">
+                  <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+                  </p>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div id="overlayer"></div>
+          <div class="loader">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+
+          <script>
+            var map = L.map('map').setView([28.32, 103.14], 8);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 39,
+              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            L.marker([28.32, 103.14]).addTo(map).bindPopup("<b>彝绣技艺发源地</b><br/>四川省美姑县").openPopup();L.circle([28.32, 103.14], 500, {color: 'red',fillColor: '#f03',fillOpacity: 0.5});
+          </script>
+
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.0.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/imagesloaded.pkgd.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jarallax.min.js"></script>
+  <script src="js/jarallax-element.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/jquery.lettering.js"></script>
+
+
+  <script src="js/TweenMax.min.js"></script>
+  <script src="js/ScrollMagic.min.js"></script>
+  <script src="js/scrollmagic.animation.gsap.min.js"></script>
+  <script src="js/debug.addIndicators.min.js"></script>
+
+
+  <script src="js/custom.js"></script>
+
+
+  <script src="css/less.min.js"></script>
+  <script src="js1/jquery.min.js"></script>
+  <script src="js1/index.js"></script>
+
+
+</body>
+</html>
