@@ -7,7 +7,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50MTW6XLL"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-T50MTW6XLL'); </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
@@ -36,7 +35,7 @@
   <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="crossorigin=""> </script>
 
-  <title>非遗技艺 | 彝族漆器髹饰技艺</title>
+  <title>非遗技艺 | 彝族几何纹样</title>
   <style media="screen">
     :root {
       --color-text: navy;
@@ -133,21 +132,61 @@
         }
 
         .pagination a:hover:not(.active) {background-color: #ddd;}
-  .imageBox {
-   position: relative;
-   float: left;
- }
 
- .imageBox .hoverImg {
-   position: absolute;
-   left: 0;
-   top: 0;
-   display: none;
- }
+        img {
+          animation-duration: 3s;
+          animation-name: slidein;
+        }
 
- .imageBox:hover .hoverImg {
-   display: block;
- }
+        @keyframes slidein {
+          from {
+            margin-left: 100%;
+            width: 300%;
+          }
+
+          to {
+            margin-left: 0%;
+            width: 100%;
+          }
+        }
+
+      /*-------------------动画----------------*/
+          *{
+          margin: 0;
+      padding: 0;
+  }
+  .box{
+      margin: 50px auto;
+      width: 882px;
+      height:20px;
+      overflow: hidden;
+  }
+  .box > ul{
+      width: 300%;
+      /*动画名称*/
+      animation-name: move;
+      /*动画时间*/
+      animation-duration: 7s;
+      /*动画次数*/
+      animation-iteration-count: infinite;
+      /*匀速*/
+      animation-timing-function: linear;
+  }
+  .box > ul > li{
+      float: left;
+      list-style: none;
+  }
+  @keyframes move {
+      /*动画起始位置*/
+      0%{
+          transform: translateX(0px);
+      }
+      /*动画结束状态*/
+      100%{
+          transform: translateX(-882px);
+       }
+   }
+
 
   </style>
 </head>
@@ -189,7 +228,7 @@
                 <li><a href="1擀毡.html">擀毡技艺</a></li>
                 <li ><a href="2毛纺织.html">毛纺织技艺</a></li>
                 <li><a href="3彝族刺绣.html">彝族刺绣</a></li>
-                <li><a href="4漆器技艺.html">彝族漆器髹饰技艺</a></li>
+                <li><a href="4漆器技艺.html">彝族几何纹样</a></li>
 
 
 
@@ -214,7 +253,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <h1 class="hero-heading">彝族漆器髹饰技艺</h1>
+          <h1 class="hero-heading">彝族几何纹样</h1>
           <!--div  class="line js-line mx-auto mb-3 my-3"></div>
           <p class="sub-text">By Joefrey Mahusay <span class="mx-3">&bullet;</span> on Jun 13, 2021 </p-->
         </div>
@@ -227,21 +266,22 @@
       <div class="row justify-content-center align-items-stretch">
         <article class="col-lg-8 order-lg-2 px-lg-5">
 
-          <h3 style="color:#b78d12;"><strong>缘起</strong></h3>
-          <p>彝族漆器髹饰技艺，四川省喜德县、贵州省大方县地方传统手工技艺，国家级非物质文化遗产之一。</p>
-          <p>彝族漆器髹饰技艺选用优质杜鹃木、酸枝木、樟木等为原料，经过锯、刨、磨、粘等工序，然后在器形表面精心漆绘图案纹饰最后完成一件漆器。</p>
-          <p>2008年6月7日，彝族漆器髹饰技艺经国务院批准列入第二批国家级非物质文化遗产名录，项目编号Ⅷ-128。 2019年11月，彝族漆器髹饰技艺列入国家级非物质文化遗产代表性项目保护单位名单。</p>
+          <h3>缘起</h3>
+          <p>彝族主要分布在中国西南地区,在岁月长河中受历史、地理等诸多因素的影响， 形成了许多支系。在各分支的彝族服饰文化的相似性中，彝族服饰几何纹样被广 泛使用，而且不同支系在发展过程中，形成了不同的地域特征，所以彝族服饰几何纹样的形式多样，并富有文化价值。</p>
+
+          <p>彝族服饰几何纹样大部分是从现实生活中常见的事物与景物演变而来的，体现了彝族人对复杂事物本质的把握和高度概括的能力。</p>
+
+          <p>他们可以用最简单明了的艺术语言表达事物的特征，提取符号性强的图案，用以意写形的表现法演化出从具象转化为抽象的独特艺术符号。</p>
 
           <h3>&emsp;</h3>
 
-          <h3 style="color:#b78d12;"><strong>步骤</strong></h3>
-          <p>彝族漆器髹饰技艺经过千百年来的提炼和发展，形成了独具特色的民族工艺，其制作的工艺流程可分为几十道工序，大概有以下六个方面的工序：</p>
-          <p>①选材:彝族人民在长期的实践中积累了宝贵的经验，他们认为制作彝族漆器最上等的原木就是格尼（桦槁树）和索玛（杜鹃树之一），格尼用于制作大餐（酒）具，索玛用于制作小餐（酒）具，原料采伐一般要在冬季砍伐，砍伐后的木料要在树林里自然阴干，次年冬天才能投入制作。</p>
-          <p>②粗坯制作:彝族漆器的坯胎分为粗坯和细坯，粗坯的制作是指以刀斧将原木砍削成形，分为野外制作和室内制作。野外制作就是直接在储藏木料的地方制作粗坯，室内制作就是把木料运回屋内制作粗坯。</p>
-          <p>③粗坯储藏:粗坯制成后，就是粗坯储藏，这是事关漆器质量的一个环节，通常在地里挖坑深埋，坑上再堆积农家肥令其发酵，深埋时间一般在100天左右，经过这样去性处理制作而成的漆器就不易变形、不易裂开、经久耐用。</p>
-          <p>④细坯制作：师傅盘腿坐于工场上方，双手一前一后握住一长柄旋刀，对准飞旋的粗坯作“削”，通过对木胎不同部位的逐削加工和精细制作，制成原木色器皿。</p>
-          <p>⑤漆绘：彝族漆器的漆绘技法独特，凡是彝族漆器都只有黑、红、黄三种颜色，主要花纹有牛目纹、鸡冠纹、羊角纹、鱼刺纹等。</p>
-          <p>⑥成品储藏：彝族漆器的漆绘流程结束后就进入储藏阴干阶段，储藏室一般建在房前屋后，通常在土墩里横挖一个小窑洞，容积以一个成年男人的手臂伸入所及为宜。</p>
+          <h3>形制</h3>
+          <p>彝族服饰中常见的几何纹样有八角纹、回形纹、人形舞蹈纹、漩涡纹、水波纹、火焰纹等，这些纹样的设计往往遵循一定的构成方式，并非是杂乱无章的。</p>
+          <p>彝族服饰上的图纹式样异常丰富。纵观缀于其服饰上纷繁的图纹式样按其属性可归纳为这样几类，即几何型图纹，图腾式图纹，花卉、鱼虫图纹，自然景物图纹等四种类型。</p>
+          <p>①几何型图纹是组成彝族服饰图纹的基本类型其装饰的部位见于上衣的盘肩、社边、下摆裤脚、裙边等。在几何型图纹中，最简洁的是线状条纹，线状条纹又因宽度和色彩的不同而异，随衣服部位的需要确定线状条纹的位置、走势。观其彝族服饰中条纹的作用，除具自身的装饰作用外，主要起不同图纹组合间的分隔及连接作用。</p>
+          <p>②图腾式图纹。彝族对图腾的崇拜极其强烈，其崇拜的对象有火、虎、鹰、龙等。对图腾崇拜的这种清神文化习俗也反映在亲族的服饰图纹上。火在服饰上是以火焰纹的形式出现的。据张建华主编的《彝族文化大观》一书介绍，在云南省红河州的石屏、开远、金平等地流行一种火焰纹，当地的彝族妇女用镶补的手法，先剪好绿、蓝等色的布质火焰纹样，用红线锁边，缀于服饰的底布上，作为女上装的后摆衣袖、头帕等部位的装饰。其构思奇巧,如冉冉飘动的火焰。</p>
+          <p>③花卉、鱼中图纹。彝族是一个爱美的民族,认为生存于自然界的奇花异草，姿态优美的鱼虫都是美的产物，为彝人所钟爱，所以将众多的花卉 、鱼虫种类抽象化,形成特殊图纹,大量用在服饰上。在花卉、鱼虫图纹类型中，尤以花卉图纹引人注目成为彝族服饰图纹的主体，使人对彝族的服装产生花团锦簇之美感。</p>
+          <p>④自然景物图纹。与花卉、鱼虫图纹一样,自然界中的日、月、星辰以及自然现象的光波、水纹，是彝族崇敬的对象，它们也通过使用抽象性的语言而形成图案，用于彝族的服饰上，表现了鑫人对大自然的热爱与向往。在彝族服饰上常用的自然景物图纹有太阳、月亮、星星、云彩、海浪等。</p>
 
         </article>
 
@@ -256,15 +296,9 @@
           </div>
         </div>
 
-
-        <div class="col-lg-3 mb-5 mb-lg-0 order-lg-3 imageBox">
-          <div class="imageInn">
+        <div class="col-lg-3 mb-5 mb-lg-0 order-lg-3">
           <img src="img/展示4.1.jpg" alt="Image" class="img-fluid rounded">
           <h3>&emsp;</h3>
-          </div>
-          <div class="hoverImg">
-              <img src="img/zhanshi4.1.jpg" alt="Image" class="img-fluid rounded">
-              </div>
           <img src="img/展示4.2.jpg" alt="Image" class="img-fluid rounded">
           <h3>&emsp;</h3>
           <img src="img/展示4.3.jpg" alt="Image" class="img-fluid rounded">
@@ -273,8 +307,6 @@
       </div>
     </div>
   </div>
-
-
   <div class="center" style="padding-bottom:10rem;padding-top:-2rem;">
     <div class="pagination">
     <a href="3彝族刺绣.html">«</a>
@@ -295,7 +327,6 @@
             <h1>一起探索诺苏之旅吧！</h1>
             <p>诺苏——是来自四川大凉山的彝族；他们勤劳朴实，拥有最古老神秘的文化。那些花纹、图案、文字，似乎还有说不完的故事想要向你展示...</p >
             <a href="final_project/contact.html" class="btn btn-primary">Get In Touch</a>
-              <a href="javascript:scroll(0,0)"  class="btn btn-primary">返回顶部</a>
           </div>
         </div>
       </div>
@@ -304,7 +335,12 @@
 
 
       <div class="site-footer">
-        <div class="container">、
+        <div class="container">
+          <div class="box">
+              <ul>
+                  <li><img src="img/wenyang1.png" alt=""></li>
+              </ul>
+          </div>
           <div class="row justify-content-center text-center copyright">
             <div class="col-md-8">
               <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
@@ -325,13 +361,13 @@
       </div>
 
       <script>
-        var map = L.map('map').setView([28.3, 102.4], 8);
+        var map = L.map('map').setView([28.32, 103.14], 8);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 39,
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        L.marker([28.3, 102.4]).addTo(map).bindPopup("<b>彝族漆器髹饰技艺发源地</b><br/>四川省喜德县").openPopup();L.circle([28.3, 102.4], 500, {color: 'red',fillColor: '#f03',fillOpacity: 0.5});
+        L.marker([28.32, 103.14]).addTo(map).bindPopup("<b>纹样代表</b><br/>四川省美姑县").openPopup();L.circle([28.32, 103.14], 500, {color: 'red',fillColor: '#f03',fillOpacity: 0.5});
       </script>
 
   <script src="js/jquery-3.5.1.min.js"></script>
