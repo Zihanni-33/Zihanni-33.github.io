@@ -7,7 +7,6 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50MTW6XLL"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-T50MTW6XLL'); </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
@@ -135,6 +134,62 @@
 
     .pagination a:hover:not(.active) {background-color: #ddd;}
 
+
+            /*-------------------动图----------------*/
+            img {
+              animation-duration: 3s;
+              animation-name: slidein;
+            }
+
+            @keyframes slidein {
+              from {
+                margin-left: 100%;
+                width: 300%;
+              }
+
+              to {
+                margin-left: 0%;
+                width: 100%;
+              }
+            }
+
+            /*-------------------动画----------------*/
+                *{
+                margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 50px auto;
+            width: 882px;
+            height:20px;
+            overflow: hidden;
+        }
+        .box > ul{
+            width: 300%;
+            /*动画名称*/
+            animation-name: move;
+            /*动画时间*/
+            animation-duration: 7s;
+            /*动画次数*/
+            animation-iteration-count: infinite;
+            /*匀速*/
+            animation-timing-function: linear;
+        }
+        .box > ul > li{
+            float: left;
+            list-style: none;
+        }
+        @keyframes move {
+            /*动画起始位置*/
+            0%{
+                transform: translateX(0px);
+            }
+            /*动画结束状态*/
+            100%{
+                transform: translateX(-882px);
+             }
+         }
+
   </style>
 </head>
 <body>
@@ -176,7 +231,7 @@
                 <li><a href="1擀毡.html">擀毡技艺</a></li>
                 <li ><a href="2毛纺织.html">毛纺织技艺</a></li>
                 <li><a href="3彝族刺绣.html">彝族刺绣</a></li>
-                <li><a href="4漆器技艺.html">彝族漆器髹饰技艺</a></li>
+                <li><a href="4漆器技艺.html">彝族几何纹样</a></li>
 
 
 
@@ -214,14 +269,14 @@
       <div class="row justify-content-center align-items-stretch">
         <article class="col-lg-8 order-lg-2 px-lg-5">
 
-          <h3 style="color:#b78d12;"><strong>缘起</strong></h3>
+          <h3>缘起</h3>
           <p>据彝文古籍《起源经》（约汉代）记载，纺线织布始于彝族英雄支格阿鲁的母亲蒲嫫列依时代。毛纺织技艺的历史悠久，工艺独特。</p>
           <p>毛纺织佳史和瓦拉是彝族男女老少的必备之物，因为这个地区海拔较高，早晚温差大。佳史多用羊毛制成，昼为衣，夜为被，雨为蓑，寒为裘，四季不离。这种手艺已经流传了几千年。 </p>
           <p>毛纺织擀制技艺在有些人看来可能显得原始落后，它却是传统文化的一块活化石，是凉山重要的民族民间文化资源，因而弥足珍贵。</p>
           <p>"彝人呵护了羊，而羊也反哺了彝人，使得我们在冬天特别温暖。其实啊，正因为我们的族人，他们选择了羊群，我们也才拥有了一曲曲永恒而美丽动人的牧歌。 "</p>
           <h3>&emsp;</h3>
 
-          <h3 style="color:#b78d12;"><strong>步骤</strong></h3>
+          <h3>步骤</h3>
           <p>按照彝族历史记录，彝族毛纺织技艺，基本由彝族妇女所掌握。</p>
           <p>彝族妇女把羊毛洗干净后晒干，先将羊毛扯为毛绒，左手握毳，右手持纺陀，将毳一头搓细小线套在纺陀勾上，然后右手指边搓纺陀旋转，一搓、一拉、一捏又绕回纺陀上，如此反复操作而捻成毛线。</p>
           <p>毛纺织过程中的剪毛、弹毛流程和工具与擀毡剪毛、弹毛流程和工具相同。</p>
@@ -257,8 +312,8 @@
   <div class="pagination">
   <a href="2毛纺织.html">«</a>
   <a href="1擀毡.html">1</a>
-  <a href="2毛纺织.html" class="active">2</a>
-  <a href="3彝族刺绣.html">3</a>
+  <a href="2毛纺织.html">2</a>
+  <a href="3彝族刺绣.html" class="active">3</a>
   <a href="4漆器技艺.html">4</a>
   <a href="4漆器技艺.html">»</a>
   </div>
@@ -273,7 +328,6 @@
               <h1>一起探索诺苏之旅吧！</h1>
               <p>诺苏——是来自四川大凉山的彝族；他们勤劳朴实，拥有最古老神秘的文化。那些花纹、图案、文字，似乎还有说不完的故事想要向你展示...</p >
             <a href="final_project/contact.html" class="btn btn-primary">Get In Touch</a>
-                <a href="javascript:scroll(0,0)"  class="btn btn-primary">返回顶部</a>
             </div>
           </div>
         </div>
@@ -281,19 +335,19 @@
 
 
 
-
-
-
     <div class="site-footer">
       <div class="container">
+        <div class="box">
+            <ul>
+                <li><img src="img/wenyang1.png" alt=""></li>
+            </ul>
+        </div>
         <div class="row justify-content-center text-center copyright">
           <div class="col-md-8">
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
             </p>
           </div>
         </div>
-
-
       </div>
     </div>
 
