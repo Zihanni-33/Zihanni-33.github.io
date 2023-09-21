@@ -7,7 +7,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50MTW6XLL"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-T50MTW6XLL'); </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
@@ -133,21 +132,62 @@
         }
 
         .pagination a:hover:not(.active) {background-color: #ddd;}
-        .imageBox {
-         position: relative;
-         float: left;
-       }
 
-       .imageBox .hoverImg {
-         position: absolute;
-         left: 0;
-         top: 0;
-         display: none;
-       }
+        /*-------------------动图----------------*/
+        img {
+          animation-duration: 3s;
+          animation-name: slidein;
+        }
 
-       .imageBox:hover .hoverImg {
-         display: block;
-       }
+        @keyframes slidein {
+          from {
+            margin-left: 100%;
+            width: 300%;
+          }
+
+          to {
+            margin-left: 0%;
+            width: 100%;
+          }
+        }
+
+        /*-------------------动画----------------*/
+            *{
+            margin: 0;
+        padding: 0;
+    }
+    .box{
+        margin: 50px auto;
+        width: 882px;
+        height:20px;
+        overflow: hidden;
+    }
+    .box > ul{
+        width: 300%;
+        /*动画名称*/
+        animation-name: move;
+        /*动画时间*/
+        animation-duration: 7s;
+        /*动画次数*/
+        animation-iteration-count: infinite;
+        /*匀速*/
+        animation-timing-function: linear;
+    }
+    .box > ul > li{
+        float: left;
+        list-style: none;
+    }
+    @keyframes move {
+        /*动画起始位置*/
+        0%{
+            transform: translateX(0px);
+        }
+        /*动画结束状态*/
+        100%{
+            transform: translateX(-882px);
+         }
+     }
+
   </style>
 </head>
 <body>
@@ -189,7 +229,7 @@
                 <li><a href="1擀毡.html">擀毡技艺</a></li>
                 <li ><a href="2毛纺织.html">毛纺织技艺</a></li>
                 <li><a href="3彝族刺绣.html">彝族刺绣</a></li>
-                <li><a href="4漆器技艺.html">彝族漆器髹饰技艺</a></li>
+                <li><a href="4漆器技艺.html">彝族几何纹样</a></li>
 
 
 
@@ -226,7 +266,7 @@
       <div class="row justify-content-center align-items-stretch">
         <article class="col-lg-8 order-lg-2 px-lg-5">
 
-          <h3 style="color:#b78d12;"><strong>缘起</strong></h3>
+          <h3>缘起</h3>
           <p>“不长树的山不算山，不会绣花的女子不算彝家女。”</p>
           <p>彝族女孩子自幼学习刺绣，从简单的花边、单一的绣片开始学起，慢慢学习绣制手帕、鞋垫，再到头巾、围腰，一直学到绣制节日盛装、婚嫁礼服。</p>
           <p>闲暇时间，彝家女子就会三五成群地围坐在一起，一边谈笑风生，一边飞针走线，凭着简单的花针和灵巧的双手，将自己对美好爱情和幸福生活的向往一针一线地绣进绚丽多彩、姿态万千的图案里，纺织出一个个梦幻般的世界。</p>
@@ -235,7 +275,7 @@
 
           <h3>&emsp;</h3>
 
-          <h3 style="color:#b78d12;"><strong>步骤</strong></h3>
+          <h3>步骤</h3>
           <p>在构图上，有对称排列也有参差交错，有重叠构架也有流线贯通。</p>
           <p>在配色上，大胆灵活，以体现富贵喜庆气息的红、黄、黑为主色调，又兼用表现力丰富的其他各种颜色，充分显现出彝家人对美好生活的向往。</p>
           <p>在纹样上，主要分抽象、具象两种刺绣纹样，抽象纹样将自然元素通过点线面来进行变形和组合，形成有规律的几何纹样，如水波纹、云彩纹等，具象纹样一般是动植物和生产生活器具类的纹样，如羊角纹、指甲印纹、窗格纹、火镰纹等。</p>
@@ -254,15 +294,8 @@
           </div>
         </div>
 
-        <div class="col-lg-3 mb-5 mb-lg-0 order-lg-3 imageBox">
-
-
-          <div class="imageInn">
-            <img src="img/展示3.1.jpg" alt="Default Image" class="img-fluid rounded">
-          </div>
-          <div class="hoverImg">
-            <img src="img/zhanshi3.1.jpg" alt="Profile Image" class="img-fluid rounded">
-          </div>
+        <div class="col-lg-3 mb-5 mb-lg-0 order-lg-3">
+          <img src="img/展示3.1.jpg" alt="Image" class="img-fluid rounded">
           <h3>&emsp;</h3>
           <img src="img/展示3.2.jpg" alt="Image" class="img-fluid rounded">
           <h3>&emsp;</h3>
@@ -292,7 +325,6 @@
                 <h1>一起探索诺苏之旅吧！</h1>
                 <p>诺苏——是来自四川大凉山的彝族；他们勤劳朴实，拥有最古老神秘的文化。那些花纹、图案、文字，似乎还有说不完的故事想要向你展示...</p >
                 <a href="final_project/contact.html" class="btn btn-primary">Get In Touch</a>
-                  <a href="javascript:scroll(0,0)"  class="btn btn-primary">返回顶部</a>
               </div>
             </div>
           </div>
@@ -300,18 +332,21 @@
 
 
 
-          <div class="site-footer">
-            <div class="container">
-              <div class="row justify-content-center text-center copyright">
-                <div class="col-md-8">
-                  <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
-                  </p>
-                </div>
-              </div>
-
-
+      <div class="site-footer">
+        <div class="container">
+          <div class="box">
+              <ul>
+                  <li><img src="img/wenyang1.png" alt=""></li>
+              </ul>
+          </div>
+          <div class="row justify-content-center text-center copyright">
+            <div class="col-md-8">
+              <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
+              </p>
             </div>
           </div>
+        </div>
+      </div>
 
 
           <div id="overlayer"></div>
