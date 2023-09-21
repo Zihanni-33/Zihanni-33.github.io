@@ -7,7 +7,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-T50MTW6XLL"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-T50MTW6XLL'); </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
@@ -133,6 +132,61 @@
     }
 
     .pagination a:hover:not(.active) {background-color: #ddd;}
+
+    /*-------------------动图----------------*/
+    img {
+      animation-duration: 3s;
+      animation-name: slidein;
+    }
+
+    @keyframes slidein {
+      from {
+        margin-left: 100%;
+        width: 300%;
+      }
+
+      to {
+        margin-left: 0%;
+        width: 100%;
+      }
+    }
+
+    /*-------------------动画----------------*/
+        *{
+        margin: 0;
+    padding: 0;
+}
+.box{
+    margin: 50px auto;
+    width: 882px;
+    height:20px;
+    overflow: hidden;
+}
+.box > ul{
+    width: 300%;
+    /*动画名称*/
+    animation-name: move;
+    /*动画时间*/
+    animation-duration: 7s;
+    /*动画次数*/
+    animation-iteration-count: infinite;
+    /*匀速*/
+    animation-timing-function: linear;
+}
+.box > ul > li{
+    float: left;
+    list-style: none;
+}
+@keyframes move {
+    /*动画起始位置*/
+    0%{
+        transform: translateX(0px);
+    }
+    /*动画结束状态*/
+    100%{
+        transform: translateX(-882px);
+     }
+ }
   </style>
 </head>
 <body>
@@ -211,14 +265,14 @@
       <div class="row justify-content-center align-items-stretch">
         <article class="col-lg-8 order-lg-2 px-lg-5">
 
-          <h3 style="color:#b78d12;"><strong>缘起</strong></h3>
+          <h3>缘起</h3>
           <p>据彝文古籍《起源经》（约汉代）记载，彝族弹毛擀毡，始创于先祖阿约阿先时代。</p>
           <p>彝族人民日常劳作辛苦，而挡风御寒、厚实轻便的羊毛制品很好地满足了彝族人民的需求，因此擀毡在彝族人民的日常生活中占据了重要的一部分。</p>
           <p>它影响着彝族千百年服饰的演变及发展，因此也被称为“彝族服饰文化的活化石”，同时也是国家级的非物质文化遗产之一。</p>
           <p>随着时代的变迁，擀毡和许许多多饱含人类的智慧的非物质文化遗产一样，不可避免的淡出了我们的生活，但淡不出我们的记忆。</p>
           <h3>&emsp;</h3>
 
-          <h3 style="color:#b78d12;"><strong>步骤</strong></h3>
+          <h3>步骤</h3>
           <p>“知法不知窍，惹得神鬼笑”，擀毡是一道苦活、巧活、关键活，一页毡要擀两个小时左右，擀好的毡不掉毛、不变形，能一铺三四十年，学问都在擀毡上，劲小了羊毛板结不实，劲大了七孔八窍，薄厚不匀。</p>
           <p>一条毡，从选毛到成品，中间历经打毛、除油、弹毛、铺毛、揉毡、洗毡、揉边等近十道工序，在此仅作部分展示。</p>
           <p>①弹羊毛：把松洁羊毛弹松在竹帘上，以弓弦把羊毛一点一点地放在竹帘上，弹平呈长方形。</p>
@@ -269,11 +323,10 @@
             <h3 class="mb-5">步骤示例图</h3>
             <div class="marquee">
               <div class="marquee__group">
-                <img src="img/步骤1.jpg" alt="Image" class="img-fluid rounded">
-                <img src="img/zhan2.jpg" alt="Image" class="img-fluid rounded">
-                <img src="img/zhan3.jpg" alt="Image" class="img-fluid rounded">
-                <img src="img/zhan4.jpg" alt="Image" class="img-fluid rounded">
-                <img src="img/zhan5.jpg" alt="Image" class="img-fluid rounded">
+                <img src="img/步骤1.png" alt="Image" class="img-fluid rounded">
+                <img src="img/步骤1.png" alt="Image" class="img-fluid rounded">
+                <img src="img/步骤1.png" alt="Image" class="img-fluid rounded">
+                <img src="img/步骤1.png" alt="Image" class="img-fluid rounded">
               </div>
             </div>
             <h3>&emsp;</h3>
@@ -281,45 +334,47 @@
             <h3>&emsp;</h3>
 
           </div>
-
-
-            <div class="center" style="padding-bottom:10rem;padding-top:-2rem;">
-            <div class="pagination">
-            <a href="2毛纺织.html">«</a>
-            <a href="1擀毡.html"class="active">1</a>
-            <a href="2毛纺织.html">2</a>
-            <a href="3彝族刺绣.html" >3</a>
-            <a href="4漆器技艺.html">4</a>
-            <a href="4漆器技艺.html">»</a>
-            </div>
+          <div class="center" style="padding-bottom:10rem;padding-top:-2rem;">
+          <div class="pagination">
+          <a href="2毛纺织.html">«</a>
+          <a href="1擀毡.html">1</a>
+          <a href="2毛纺织.html">2</a>
+          <a href="3彝族刺绣.html" class="active">3</a>
+          <a href="4漆器技艺.html">4</a>
+          <a href="4漆器技艺.html">»</a>
           </div>
-              <div class="custom-hero section">
-                  <div class="container">
-                    <div class="row justify-content-center">
-                      <div id="map" style="height:400px;width:700px;"></div>
-                      <h3>&emsp;</h3>
-                      <div class="col-lg-6">
-                        <h3>&emsp;</h3>
-                        <h1>一起探索诺苏之旅吧！</h1>
-                        <p>诺苏——是来自四川大凉山的彝族；他们勤劳朴实，拥有最古老神秘的文化。那些花纹、图案、文字，似乎还有说不完的故事想要向你展示...</p >
-                      <a href="final_project/contact.html" class="btn btn-primary">Get In Touch</a>
-                          <a href="javascript:scroll(0,0)"  class="btn btn-primary">返回顶部</a>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+        </div>
+
+          <div id="map" style="height:400px;width:700px;"></div>
+
+
+
+
+          <h3>&emsp;</h3>
+          <div class="col-lg-6">
+            <h3>&emsp;</h3>
+            <h1>一起探索诺苏之旅吧！</h1>
+            <p>诺苏——是来自四川大凉山的彝族；他们勤劳朴实，拥有最古老神秘的文化。那些花纹、图案、文字，似乎还有说不完的故事想要向你展示...</p >
+            <a href="final_project/contact.html" class="btn btn-primary">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+  </div>
 
 
   <div class="site-footer">
     <div class="container">
+      <div class="box">
+          <ul>
+              <li><img src="img/wenyang1.png" alt=""></li>
+          </ul>
+      </div>
       <div class="row justify-content-center text-center copyright">
         <div class="col-md-8">
           <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> <!-- License information: https://untree.co/license/ -->
           </p>
         </div>
       </div>
-
-
     </div>
   </div>
 
