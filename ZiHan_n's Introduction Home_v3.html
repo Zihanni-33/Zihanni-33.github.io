@@ -185,68 +185,37 @@
     }
     .resume-section { position: relative; z-index: 1; }
 
-    /* ===== Scattered Photo Collage ===== */
+    /* ===== Clean 4×3 Photo Grid ===== */
     .photo-collage {
-      position: relative;
-      min-height: 520px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 130px);
+      gap: 10px;
     }
     .collage-img {
-      position: absolute;
       border-radius: 10px; overflow: hidden; cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
       border: 2px solid transparent;
     }
     .collage-img:hover {
-      transform: scale(1.08) rotate(0deg) !important;
-      z-index: 30 !important;
-      border-color: rgba(180,150,220,0.6);
-      box-shadow: 0 12px 40px rgba(120,90,170,0.45);
+      transform: scale(1.05);
+      z-index: 10; border-color: rgba(180,150,220,0.55);
+      box-shadow: 0 8px 30px rgba(120,90,170,0.35);
     }
     .collage-img img { width:100%; height:100%; object-fit:cover; display:block; }
 
-    /* 12 photos — varied sizes, scattered positions, uneven edges */
-    .collage-img:nth-child(1)  { top:0;    left:0;    width:155px; height:175px; z-index:5;  transform:rotate(-2deg); }
-    .collage-img:nth-child(2)  { top:8px;  left:148px; width:105px; height:130px; z-index:4;  transform:rotate(3deg); }
-    .collage-img:nth-child(3)  { top:0;    left:246px; width:140px; height:155px; z-index:6;  transform:rotate(-1deg); }
-    .collage-img:nth-child(4)  { top:170px;left:5px;   width:135px; height:125px; z-index:3;  transform:rotate(4deg); }
-    .collage-img:nth-child(5)  { top:155px;left:145px; width:95px;  height:145px; z-index:7;  transform:rotate(-4deg); }
-    .collage-img:nth-child(6)  { top:165px;left:235px; width:150px; height:135px; z-index:2;  transform:rotate(2deg); }
-    .collage-img:nth-child(7)  { top:295px;left:8px;   width:115px; height:130px; z-index:8;  transform:rotate(-2deg); }
-    .collage-img:nth-child(8)  { top:285px;left:128px; width:130px; height:150px; z-index:1;  transform:rotate(3deg); }
-    .collage-img:nth-child(9)  { top:300px;left:255px; width:130px; height:120px; z-index:9;  transform:rotate(-5deg); }
-    .collage-img:nth-child(10) { top:420px;left:0;     width:120px; height:130px; z-index:11; transform:rotate(1deg); }
-    .collage-img:nth-child(11) { top:425px;left:125px; width:125px; height:115px; z-index:10; transform:rotate(-3deg); }
-    .collage-img:nth-child(12) { top:415px;left:248px; width:140px; height:135px; z-index:12; transform:rotate(2deg); }
-
     /* ===== Intro Text with large Hello ===== */
-    .about-intro-right { padding-left: 16px; }
-    .about-intro-right .about-card-inline {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(180,150,220,0.12);
-      border-radius: 24px; padding: 36px 34px;
-      height: 100%;
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-    }
-    .about-intro-right .about-card-inline::after {
-      content:''; position:absolute; top:-40%; right:-40%;
-      width: 250px; height: 250px;
-      background: radial-gradient(circle, rgba(180,150,220,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    .about-intro-right { padding-left: 24px; }
     .big-hello {
       font-family: 'Cormorant Garamond','Georgia',serif;
       font-size: 52px; font-weight: 700; font-style: italic;
-      color: #e8dcff;
-      display: block; line-height: 1; margin-bottom: 14px;
+      color: #e8dcff; display: block; line-height: 1; margin-bottom: 14px;
       text-shadow: 0 0 18px rgba(200,170,240,0.5);
-      position: relative; z-index: 1;
     }
     .intro-text {
-      color: rgba(215,210,235,0.88); font-size: 15px; line-height: 2;
+      color: rgba(215,210,235,0.88); font-size: 15px; line-height: 2.1;
       font-family: 'Cormorant Garamond','Georgia','STKaiti','KaiTi',serif;
-      position: relative; z-index: 1; margin: 0;
+      margin: 0;
     }
     .intro-text .highlight { color: #d4c8f0; font-weight: 700; }
     .contact-section .section-title { color: #fff; }
@@ -434,12 +403,7 @@
       .about-card { padding: 36px 24px; }
       .about-card p { font-size: 15px; line-height: 2; }
       .resume-section { padding: 60px 0; }
-      .photo-collage { display: grid; grid-template-columns: repeat(3,1fr); grid-auto-rows:90px; gap:6px; min-height:auto; }
-      .collage-img { position:relative !important; top:auto!important; left:auto!important; width:auto!important; height:auto!important; transform:none!important; }
-      .collage-img:nth-child(n) { grid-column:span 1; grid-row:span 1; }
-      .collage-img:nth-child(1), .collage-img:nth-child(8) { grid-column:span 2; grid-row:span 2; }
-      .collage-img:nth-child(3), .collage-img:nth-child(5), .collage-img:nth-child(10) { grid-row:span 2; }
-      .collage-img img { height:100%; }
+      .photo-collage { grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(4,100px); gap:6px; }
       .about-intro-right { padding-left: 0; margin-top: 20px; }
       .big-hello { font-size: 38px; }
       .photo-gallery {
@@ -461,13 +425,7 @@
       .edu-card { padding: 24px 18px; }
       .section-title { font-size: 24px; }
       .about-card { padding: 28px 18px; }
-      .photo-collage { display: grid; grid-template-columns: repeat(2,1fr); grid-auto-rows:80px; gap:5px; min-height:auto; }
-      .collage-img { position:relative!important; top:auto!important; left:auto!important; width:auto!important; height:auto!important; transform:none!important; }
-      .collage-img:nth-child(n) { grid-column:span 1; grid-row:span 1; }
-      .collage-img:nth-child(1), .collage-img:nth-child(8) { grid-column:span 2; grid-row:span 2; }
-      .collage-img:nth-child(3), .collage-img:nth-child(5) { grid-row:span 2; }
-      .collage-img img { height:100%; }
-      .about-card-inline { padding: 24px 18px !important; }
+      .photo-collage { grid-template-columns: repeat(2,1fr); grid-template-rows: repeat(6,90px); gap:5px; }
       .big-hello { font-size: 32px; }
     }
   </style>
@@ -532,22 +490,18 @@
     </div>
     <div class="row align-items-start reveal">
       <!-- Left: Overlapping Photo Collage -->
-      <div class="col-lg-8 mb-4 mb-lg-0">
+      <div class="col-lg-9 mb-4 mb-lg-0">
         <div class="photo-collage" id="photoCollage"></div>
         <p class="text-center mt-3" style="color:rgba(200,185,230,0.5); font-size:12px; letter-spacing:2px;">&#9654; 点击照片可放大查看</p>
       </div>
       <!-- Right: About Intro -->
-      <div class="col-lg-4 about-intro-right">
-        <div class="about-card-inline">
-          <div>
-            <span class="big-hello">Hello！</span>
-            <p class="intro-text">
-              我是一个喜欢观察人类并很擅长思考的 <span class="highlight">ENFJ</span>，主导+淡漠型人格女孩。
-              我喜欢需要赋予创造力的事件，同时对探索新事物抱有丰满的热情，喜欢<span class="highlight">记录、创作、交流、写SOP</span>，
-              在秩序中寻找混乱插曲，在混乱中夺回生活宁静，希望我的人生能比自己少年的想象更精彩~
-            </p>
-          </div>
-        </div>
+      <div class="col-lg-3 about-intro-right">
+        <span class="big-hello">Hello！</span>
+        <p class="intro-text">
+          我是一个喜欢观察人类并很擅长思考的 <span class="highlight">ENFJ</span>，主导+淡漠型人格女孩。
+          我喜欢需要赋予创造力的事件，同时对探索新事物抱有丰满的热情，喜欢<span class="highlight">记录、创作、交流、写SOP</span>，
+          在秩序中寻找混乱插曲，在混乱中夺回生活宁静，希望我的人生能比自己少年的想象更精彩~
+        </p>
       </div>
     </div>
   </div>
