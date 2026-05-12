@@ -1,80 +1,811 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZiHan_n | Home</title>
 
-      audio{
-                 display: none;
-             }
-      #div1 img{
-      cursor: pointer;
-      transition: all 0.4s;
-    }
-      #div1 img:hover{
-      transform: scale(1.2);
-
-    }
-    </style>
-  <!--<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >-->
-  <title>ZiHan_n</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="Zihan_n.css">
-  </head>
 
- <body>
-  <audio id="music" src="Kevin Penkin - Moving In.mp3" loop="" autoplay="" preload=""></audio>
-<!--导航Navigation>-->
-  <nav id="bar" class="navbar fixed-top navbar-expand-lg navbar-dark" style="background: rgb(106, 105, 121); opacity: 0.7;" >
+  <style>
+    body {
+      background: #0a0a14 !important;
+      background-attachment: scroll !important;
+    }
+
+    /* ===== Hero ===== */
+    #hero {
+      position: relative;
+      width: 100%; height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a14 70%);
+      cursor: grab;
+    }
+    #hero:active { cursor: grabbing; }
+    #particles { position: absolute; top:0; left:0; width:100%; height:100%; pointer-events: none; }
+
+    /* ── Motto ── */
+    .hero-motto {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', 'Georgia', 'STKaiti', 'KaiTi', serif;
+      font-size: clamp(20px, 3.5vw, 36px);
+      font-weight: 400;
+      font-style: italic;
+      color: #ede4ff;
+      text-shadow:
+        0 0 14px rgba(200,170,240,0.75),
+        0 0 40px rgba(180,150,220,0.4),
+        0 0 70px rgba(160,130,210,0.2);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: 3px;
+      animation: mottoPulse 4s ease-in-out infinite;
+      z-index: 5;
+    }
+    @keyframes mottoPulse {
+      0%,100% { text-shadow: 0 0 14px rgba(200,170,240,0.75), 0 0 40px rgba(180,150,220,0.4), 0 0 70px rgba(160,130,210,0.2); }
+      50%      { text-shadow: 0 0 22px rgba(220,190,255,0.95), 0 0 55px rgba(190,160,230,0.6), 0 0 100px rgba(170,140,220,0.4); }
+    }
+
+    /* ── 3D Ring ── */
+    .ring-stage {
+      position: absolute; top: 50%; left: 50%;
+      transform-style: preserve-3d; perspective: 1200px;
+      pointer-events: none; z-index: 2;
+    }
+    .ring-3d {
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: spinRing 25s linear infinite;
+    }
+    @keyframes spinRing {
+      from { transform: rotateY(0deg); } to { transform: rotateY(360deg); }
+    }
+    .ring-char {
+      position: absolute;
+      font-family: 'Georgia','Times New Roman',serif;
+      font-weight: bold; color: #c9b8e8;
+      text-shadow: 0 0 12px rgba(180,150,220,0.7);
+      white-space: pre;
+      transform-style: preserve-3d; backface-visibility: hidden;
+      pointer-events: none;
+    }
+
+    .center-glow {
+      position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+      width: 180px; height: 180px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(180,140,220,0.25) 0%, transparent 70%);
+      pointer-events: none; z-index: 3;
+    }
+    .center-logo {
+      position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+      font-family: 'Georgia','Times New Roman',serif;
+      font-weight: bold; font-size: clamp(18px,3vw,28px);
+      color: #e0d4f8;
+      text-shadow: 0 0 24px rgba(200,170,240,0.9), 0 0 50px rgba(170,140,210,0.5);
+      pointer-events: none; letter-spacing: 4px; z-index: 4;
+    }
+
+    /* ── Satellites ── */
+    .orbit-system {
+      position: absolute; top:50%; left:50%; width:0; height:0;
+      animation: orbitSpin 30s linear infinite;
+      pointer-events: none; z-index: 3;
+    }
+    @keyframes orbitSpin {
+      from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+    }
+    .satellite { position: absolute; pointer-events: auto; text-decoration: none; }
+    .satellite:hover { filter: brightness(1.3); z-index:10; }
+    .sat-card {
+      width: 100px; height: 100px; border-radius: 20px;
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; cursor: pointer;
+      animation: counterSpin 30s linear infinite; position: relative;
+    }
+    @keyframes counterSpin {
+      from { transform: rotate(0deg); } to { transform: rotate(-360deg); }
+    }
+    .sat-card::before {
+      content:''; position:absolute; inset:0; border-radius:20px;
+      background:transparent; pointer-events:none;
+      transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .sat-card:hover::before {
+      background: rgba(180,150,220,0.15);
+      box-shadow: 0 0 35px rgba(160,130,210,0.5), inset 0 0 25px rgba(160,130,210,0.15);
+      transform: scale(1.15);
+    }
+    .sat-icon { font-size: 28px; margin-bottom: 6px; }
+    .sat-label { font-size: 12px; color: #c9b8e8; font-family: 'Georgia',serif; letter-spacing: 1px; }
+
+    .scroll-hint {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      color: rgba(200,185,230,0.7); font-size: 14px; letter-spacing: 3px;
+      font-family: 'Cormorant Garamond','Georgia',serif;
+      animation: bounceDown 2s ease-in-out infinite;
+      pointer-events: auto; cursor: pointer; z-index: 5;
+    }
+    .scroll-hint i { font-size: 20px; display: block; text-align: center; margin-top: 4px; }
+    @keyframes bounceDown {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* ===== Scroll Reveal ===== */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.25,0.46,0.45,0.94),
+                  transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    /* ===== Shared ===== */
+    .resume-section { position: relative; padding: 90px 0; }
+    .section-badge {
+      display: inline-block; padding: 6px 24px; border-radius: 50px;
+      font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px;
+      border: 1px solid rgba(180,150,220,0.5); color: #c9b8e8;
+    }
+    .section-badge.light-badge {
+      border: 1px solid rgba(100,80,140,0.35); color: #6b5b8a;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond','Georgia','STSong','SimSun',serif;
+      font-weight: 700; font-size: clamp(28px,4vw,42px); margin-bottom: 10px;
+    }
+    .section-line { width: 60px; height: 3px; margin-bottom: 40px; }
+    .section-line.dark { background: linear-gradient(90deg, #b496dc, transparent); }
+    .section-line.light-line { background: linear-gradient(90deg, #7b68a0, transparent); }
+
+    /* ===== Gradient Backgrounds ===== */
+    .grad-about  { background: #0d0d1f; }
+    .grad-photo  { background: #12122a; }
+    .grad-edu    { background: #1e1d38; }
+    .grad-work   { background: #2a2845; }
+    .grad-proj   { background: #3e3c5c; }
+    .grad-act    { background: #545270; }
+    .grad-skill  { background: #6a6884; }
+    .contact-section { background: #0d0d1a; padding: 90px 0; }
+    .contact-section .section-title { color: #fff; }
+
+    /* ── About Card ── */
+    .about-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(180,150,220,0.15);
+      border-radius: 28px; padding: 56px 48px;
+      max-width: 800px; margin: 0 auto;
+      position: relative; overflow: hidden;
+    }
+    .about-card::after {
+      content:''; position:absolute; top:-50%; right:-50%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(180,150,220,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-card p {
+      color: rgba(225,220,240,0.9); font-size: 17px; line-height: 2.2;
+      font-family: 'Cormorant Garamond','Georgia','STKaiti','KaiTi',serif;
+      position: relative; z-index: 1; margin: 0;
+    }
+    .highlight { color: #d4c8f0; font-weight: 700; }
+
+    /* ===== Photo Gallery ===== */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 130px;
+      gap: 12px;
+      max-width: 1020px; margin: 0 auto;
+    }
+    .photo-item {
+      position: relative; overflow: hidden; border-radius: 12px;
+      cursor: pointer; transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+      border: 2px solid transparent;
+    }
+    .photo-item:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(180,150,220,0.5);
+      box-shadow: 0 12px 40px rgba(100,80,140,0.3);
+      z-index: 2;
+    }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* staggered masonry */
+    .photo-item:nth-child(1)  { grid-column: span 2; grid-row: span 2; }
+    .photo-item:nth-child(2)  { grid-column: span 1; grid-row: span 1; }
+    .photo-item:nth-child(3)  { grid-column: span 1; grid-row: span 2; }
+    .photo-item:nth-child(4)  { grid-column: span 2; grid-row: span 1; }
+    .photo-item:nth-child(5)  { grid-column: span 1; grid-row: span 1; }
+    .photo-item:nth-child(6)  { grid-column: span 1; grid-row: span 2; }
+    .photo-item:nth-child(7)  { grid-column: span 1; grid-row: span 1; }
+    .photo-item:nth-child(8)  { grid-column: span 2; grid-row: span 2; }
+    .photo-item:nth-child(9)  { grid-column: span 1; grid-row: span 1; }
+    .photo-item:nth-child(10) { grid-column: span 1; grid-row: span 1; }
+    .photo-item:nth-child(11) { grid-column: span 2; grid-row: span 1; }
+    .photo-item:nth-child(12) { grid-column: span 1; grid-row: span 2; }
+
+    /* ── Lightbox ── */
+    .lightbox-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.93); z-index: 9999;
+      align-items: center; justify-content: center; flex-direction: column;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-overlay img {
+      max-width: 90vw; max-height: 80vh;
+      border-radius: 8px; box-shadow: 0 0 60px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 36px;
+      font-size: 40px; color: rgba(255,255,255,0.7); cursor: pointer;
+      transition: color 0.3s; background: none; border: none;
+    }
+    .lightbox-close:hover { color: #fff; }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 44px; color: rgba(255,255,255,0.5); cursor: pointer;
+      background: none; border: none; transition: color 0.3s; padding: 20px;
+    }
+    .lightbox-nav:hover { color: #fff; }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+
+    /* ── Timeline ── */
+    .timeline-block {
+      position: relative; padding: 36px 40px; margin-bottom: 42px;
+      background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
+      border-radius: 18px; border: 1px solid rgba(255,255,255,0.07);
+      border-left: 3px solid rgba(180,150,220,0.35);
+      transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .timeline-block:hover {
+      transform: translateY(-3px);
+      background: rgba(180,150,220,0.06);
+      border-color: rgba(180,150,220,0.25);
+      border-left-color: #b496dc;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px rgba(140,120,190,0.08);
+    }
+    .tl-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+    .tl-title { font-family: 'Cormorant Garamond','Georgia','STSong','SimSun',serif; font-weight: 700; font-size: 21px; color: #fff; }
+    .tl-subtitle { font-size: 14px; color: rgba(190,170,220,0.9); }
+    .tl-date { font-size: 13px; color: rgba(180,160,210,0.7); letter-spacing: 1px; margin-left: auto; white-space: nowrap; font-family: 'Cormorant Garamond','Georgia',serif; }
+    .tl-body { color: rgba(215,210,235,0.85); font-size: 14.5px; line-height: 2; }
+    .tl-body .label { color: #c9b4f0; font-weight: 700; font-size: 13px; margin-right: 4px; }
+    .tl-body ul { list-style: none; padding-left: 0; margin: 0; }
+    .tl-body ul li { margin-bottom: 8px; }
+    .tl-body ul li::before { content: '▸'; color: rgba(180,150,220,0.7); margin-right: 10px; }
+
+    /* light card variant */
+    .timeline-block.light-card {
+      background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.05);
+      border-left: 3px solid rgba(120,100,160,0.35);
+    }
+    .timeline-block.light-card:hover {
+      background: rgba(255,255,255,0.85);
+      border-color: rgba(120,100,160,0.25);
+      border-left-color: #7b68a0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .timeline-block.light-card .tl-title { color: #2d2640; }
+    .timeline-block.light-card .tl-subtitle { color: #6b5b8a; }
+    .timeline-block.light-card .tl-date { color: #8b7dae; }
+    .timeline-block.light-card .tl-body { color: #4a4058; }
+    .timeline-block.light-card .tl-body .label { color: #7b68a0; }
+
+    /* ── Edu Cards ── */
+    .edu-card {
+      background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);
+      border-radius: 20px; padding: 36px 32px; height: 100%;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .edu-card:hover {
+      transform: translateY(-4px);
+      background: rgba(180,150,220,0.06);
+      border-color: rgba(180,150,220,0.25);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px rgba(140,120,190,0.08);
+    }
+    .edu-badge { display: inline-block; padding: 4px 14px; border-radius: 50px; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; }
+    .edu-badge.master { background: rgba(180,150,220,0.15); color: #d4c8f0; }
+    .edu-badge.bachelor { background: rgba(180,150,220,0.1); color: #c9b8e8; }
+    .edu-school { font-family: 'Cormorant Garamond','Georgia','STSong',serif; font-weight: 700; font-size: 22px; color: #fff; margin-bottom: 6px; }
+    .edu-major { font-size: 14px; color: rgba(190,170,220,0.9); margin-bottom: 4px; }
+    .edu-date { font-size: 13px; color: rgba(180,160,210,0.7); letter-spacing: 1px; margin-bottom: 16px; }
+    .edu-detail { font-size: 14px; color: rgba(215,210,235,0.85); line-height: 1.9; }
+    .edu-detail .lbl { font-weight: 700; color: #c9b4f0; font-size: 13px; }
+
+    /* ── Skills ── */
+    .skill-group { margin-bottom: 28px; }
+    .skill-group h4 { font-family: 'Cormorant Garamond','Georgia','STSong',serif; color: #d4c8f0; font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+    .skill-tag {
+      display: inline-block; padding: 9px 20px; margin: 5px; border-radius: 50px;
+      background: rgba(180,150,220,0.1); border: 1px solid rgba(180,150,220,0.2);
+      color: #c9b8e8; font-size: 13.5px; transition: all 0.3s;
+    }
+    .skill-tag:hover {
+      background: rgba(180,150,220,0.22);
+      border-color: rgba(180,150,220,0.45);
+      box-shadow: 0 4px 16px rgba(160,130,210,0.2); transform: translateY(-2px);
+    }
+
+    /* ── Awards ── */
+    .award-item {
+      display: flex; align-items: flex-start; gap: 14px; padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: rgba(215,210,235,0.85); font-size: 14.5px; transition: all 0.25s;
+    }
+    .award-item:hover { color: #fff; padding-left: 6px; }
+    .award-icon { color: #b496dc; font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    footer { background: rgb(12,11,18); padding: 28px 0; text-align: center; color: rgba(200,185,230,0.45); font-size: 13px; }
+    .navbar { z-index: 100; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero-motto { top: 12%; font-size: clamp(16px, 4vw, 22px); letter-spacing: 1px; white-space: normal; text-align: center; }
+      .sat-card { width: 70px; height: 70px; border-radius: 14px; }
+      .sat-icon { font-size: 20px; }
+      .sat-label { font-size: 10px; }
+      .timeline-block { padding: 24px 20px; margin-bottom: 28px; }
+      .tl-header { flex-direction: column; gap: 4px; }
+      .tl-date { margin-left: 0; }
+      .about-card { padding: 36px 24px; }
+      .about-card p { font-size: 15px; line-height: 2; }
+      .resume-section { padding: 60px 0; }
+      .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 100px; gap: 8px;
+      }
+      .photo-item:nth-child(1), .photo-item:nth-child(8) { grid-column: span 2; grid-row: span 2; }
+      .photo-item:nth-child(n+2):nth-child(-n+7) { grid-column: span 1; grid-row: span 1; }
+      .photo-item:nth-child(3), .photo-item:nth-child(6), .photo-item:nth-child(12) { grid-row: span 2; }
+      .lightbox-nav { font-size: 28px; padding: 10px; }
+      .lightbox-prev { left: 5px; }
+      .lightbox-next { right: 5px; }
+    }
+    @media (max-width: 480px) {
+      .hero-motto { top: 14%; font-size: 14px; letter-spacing: 1px; white-space: normal; text-align: center; padding: 0 10px; }
+      .sat-card { width: 55px; height: 55px; border-radius: 10px; }
+      .sat-icon { font-size: 16px; margin-bottom: 2px; }
+      .sat-label { font-size: 9px; }
+      .edu-card { padding: 24px 18px; }
+      .section-title { font-size: 24px; }
+      .about-card { padding: 28px 18px; }
+      .photo-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 90px; gap: 6px; }
+      .photo-item { border-radius: 8px; }
+      .photo-item:nth-child(1), .photo-item:nth-child(8) { grid-column: span 2; grid-row: span 2; }
+      .photo-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+      .photo-item:nth-child(3), .photo-item:nth-child(6), .photo-item:nth-child(12) { grid-row: span 2; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav id="bar" class="navbar fixed-top navbar-expand-lg navbar-dark" style="background: rgba(15,13,22,0.9); backdrop-filter: blur(12px);">
   <div class="container-fluid">
-    <a class="navbar-brand" href="ZiHan_n's%20Introduction%200.html">
-      <img src="img/tou.png" style="padding-top: -100px;width:70px;height:70px">
-      <span class="nfive" >ZiHan_n's Introduction</span>
+    <a class="navbar-brand" href="#">
+      <img src="img/tou.png" style="width:46px;height:46px; border-radius:50%;">
+      <span class="nfive">ZiHan_n's Introduction</span>
     </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
- <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div id="navbarNav" class="collapse navbar-collapse nav justify-content-end">
-    <ul class="navbar-nav">
-     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="ZiHan_n's%20Introduction%20Home.html">Home</a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" aria-current="page" href="ZiHan_n's%20Introduction%20works.html">Works</a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" aria-current="page" href="ZiHan_n's%20Introduction%20fancies.html">Fancies</a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" aria-current="page" href="ZiHan_n's%20Introduction%20contact.html">Contact</a>
-     </li>
-   </ul>
-</div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNav" class="collapse navbar-collapse nav justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="ZiHan_n's%20Introduction%20Home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="ZiHan_n's%20Introduction%20works.html">Works</a></li>
+        <li class="nav-item"><a class="nav-link" href="ZiHan_n's%20Introduction%20fancies.html">Fancies</a></li>
+        <li class="nav-item"><a class="nav-link" href="ZiHan_n's%20Introduction%20contact.html">Contact</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
-<!--动态组块>-->
-  <div id="div1" class="container-fluid div1">
-  <div class="move" >
-    <a href="ZiHan_n's%20Introduction%20Home.html">
-     <img src="img/home.png"style="width:730px;height:500px;position:absolute;margin-left:360px;margin-top:500px;" <="" a="">
-    </a>
-   <a href="ZiHan_n's%20Introduction%20fancies.html">
-    <img src="img/fancies.png" style="width:500px;height:550px;position:absolute;margin-left:500px;margin-top:120px;"  <="" a="">
-   </a>
-   <a href="ZiHan_n's%20Introduction%20contact.html">
-    <img src="img/contact.png"style="width:430px;height:530px;position:absolute;margin-left:730px;margin-top:80px;"  <="" a="">
-   </a>
-   <a href="ZiHan_n's%20Introduction%20works.html">
-    <img src="img/works.png"style="width:400px;height:600px;position:absolute;margin-left:260px;margin-top:110px;"  <="" a="">
-   </a>
- </div>
+
+<section id="hero">
+  <canvas id="particles"></canvas>
+  <div class="hero-motto">Where imagination thrives, dull life awakens.</div>
+
+  <div class="ring-stage" id="ringStage">
+    <div class="ring-3d" id="ring3d"></div>
+  </div>
+  <div class="center-glow"></div>
+  <div class="center-logo">Welcome</div>
+
+  <div class="orbit-system" id="orbitSystem">
+    <a href="ZiHan_n's%20Introduction%20Home.html" class="satellite">
+      <div class="sat-card"><span class="sat-icon">🏠</span><span class="sat-label">Home</span></div></a>
+    <a href="ZiHan_n's%20Introduction%20works.html" class="satellite">
+      <div class="sat-card"><span class="sat-icon">💼</span><span class="sat-label">Works</span></div></a>
+    <a href="ZiHan_n's%20Introduction%20fancies.html" class="satellite">
+      <div class="sat-card"><span class="sat-icon">✨</span><span class="sat-label">Fancies</span></div></a>
+    <a href="ZiHan_n's%20Introduction%20contact.html" class="satellite">
+      <div class="sat-card"><span class="sat-icon">✉️</span><span class="sat-label">Contact</span></div></a>
+  </div>
+
+  <div class="scroll-hint" onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'})">
+    Explore <i class="bi bi-chevron-down"></i>
+  </div>
+</section>
+
+<section id="start" class="resume-section grad-about">
+  <div class="container" style="max-width: 850px;">
+    <div class="text-center mb-4 reveal">
+      <span class="section-badge">About Me</span>
+      <h2 class="section-title" style="color:#fff;">关于我</h2>
+      <div class="section-line dark" style="margin: 0 auto 40px;"></div>
+    </div>
+    <div class="about-card reveal">
+      <p>
+        Hello！我是一个喜欢观察人类并很擅长思考的 <span class="highlight">ENFJ</span>，主导+淡漠型人格女孩。
+        我喜欢需要赋予创造力的事件，同时对探索新事物抱有丰满的热情，喜欢<span class="highlight">记录、创作、交流、写SOP</span>，
+        在秩序中寻找混乱插曲，在混乱中夺回生活宁静，希望我的人生能比自己少年的想象更精彩~
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section grad-photo">
+  <div class="container" style="max-width: 1060px;">
+    <div class="text-center mb-4 reveal">
+      <span class="section-badge">Moments</span>
+      <h2 class="section-title" style="color:#fff;">生活碎片</h2>
+      <div class="section-line dark" style="margin: 0 auto 40px;"></div>
+    </div>
+    <div class="photo-gallery reveal" id="photoGallery"></div>
+  </div>
+</section>
+
+<div class="lightbox-overlay" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+  <img src="" alt="" id="lightboxImg">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
 </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
- </body>
+<section class="resume-section grad-edu">
+  <div class="container" style="max-width: 960px;">
+    <div class="text-center mb-4 reveal">
+      <span class="section-badge light-badge">Education</span>
+      <h2 class="section-title" style="color:#fff;">教育经历</h2>
+      <div class="section-line dark" style="margin: 0 auto 40px;"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6 reveal">
+        <div class="edu-card">
+          <span class="edu-badge master">Master</span>
+          <div class="edu-school">华东师范大学</div>
+          <div class="edu-major">全媒体传播 · 硕士</div>
+          <div class="edu-date">2025.09 - 2028.07</div>
+          <div class="edu-detail"><span class="lbl">主修课程</span>新闻传播学原理、智能广告研究、新媒体实践、传媒产业发展、量化研究、文化与传播研究等</div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="edu-card">
+          <span class="edu-badge bachelor">Bachelor</span>
+          <div class="edu-school">中国传媒大学</div>
+          <div class="edu-major">广告学（数字营销方向）· 本科</div>
+          <div class="edu-date">2021.09 - 2025.07</div>
+          <div class="edu-detail">
+            <p style="margin-bottom:8px;"><span class="lbl">成绩及荣誉</span>GPA: 3.89/4 · 排名 2/31 · 国家奖学金 · 校三好生 · 校优秀干部 · 校级实践奖项等</p>
+            <span class="lbl">主修课程</span>传播学概论、广告学概论、广告策划；市场营销、数字营销、内容营销；智能媒体、交互设计；多元数据统计等
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section grad-work">
+  <div class="container" style="max-width: 900px;">
+    <div class="text-center mb-4 reveal">
+      <span class="section-badge light-badge">Experience</span>
+      <h2 class="section-title" style="color:#fff;">实习工作经历</h2>
+      <div class="section-line dark" style="margin: 0 auto 40px;"></div>
+    </div>
+
+    <div class="timeline-block reveal">
+      <div class="tl-header">
+        <span class="tl-title">百胜中国 KFC LTO · 汉堡组</span>
+        <span class="tl-subtitle">市场营销</span>
+        <span class="tl-date">2025.11 - 2026.02</span>
+      </div>
+      <div class="tl-body"><ul>
+        <li><span class="label">产品调研</span>寻找能与小龙虾堡合作的泡面品牌，总结方便面行业品牌、消费者概况，泡面主流产品的创新趋势，并对比产品规格、包装、价格等细节数据为合作协商提供支持</li>
+        <li><span class="label">社媒 Social</span>提醒 campaign 任务节点，根据流程反馈对 OTV/Digital 广告/POP 设计等营销内容提供修改；帮助广告代理商理解贡菜五方营销 brief 的产品卖点，协同完成达人筛选，基于 brief 和创意标准对博主作品进行内容审核，及后续 UGC 投流</li>
+        <li><span class="label">产品上窗复盘</span>针对限时产品贡菜红运嫩牛五方售卖情况进行数据复盘，通过产品 US/SR 指标分渠道、组合机制、市场进度、时间、促销板块拉取数据，进行供货量 500 万与 7 天窗期的对比核算；通过社媒、前期问卷收集消费者反馈输出 PPT</li>
+      </ul></div>
+    </div>
+
+    <div class="timeline-block reveal">
+      <div class="tl-header">
+        <span class="tl-title">小红书 · 商业化</span>
+        <span class="tl-subtitle">平台专家</span>
+        <span class="tl-date">2024.10 - 2025.05</span>
+      </div>
+      <div class="tl-body"><ul>
+        <li><span class="label">投流数据运营</span>根据前后链路中的基础数据对客户投广效果进行调优支持，并对接相关部门完成客户投流及审核问题；支持重点客户（如星火-种草；巨微-商销）的营销数据投放效果复盘；维护细分赛道的客户标签，使用 Excel 处理每周流水趋势</li>
+        <li><span class="label">营销策略输出</span>独立负责图书行业优质笔记方法论的宣讲文档（涉及赛道人群画像提炼、笔记因子应用）为 140+ 图书客户提出策略建议；完成二奢行业基础流水数据分析文档（涉及站内行业潜力、细分赛道的商业营销模式洞察）；产出魔都 AMI 客户的 SPU×人群×内容种草的复盘 Onepage</li>
+        <li><span class="label">宣发物料产出</span>组内宣讲活动海报、客户商业战绩海报、复盘 PPT 制作；文档美化、账户笔记封面指导及制作等</li>
+      </ul></div>
+    </div>
+
+    <div class="timeline-block reveal">
+      <div class="tl-header">
+        <span class="tl-title">未来美至（北京）</span>
+        <span class="tl-subtitle">市场部 · 营销活动策划</span>
+        <span class="tl-date">2023.12 - 2024.03</span>
+      </div>
+      <div class="tl-body"><ul>
+        <li><span class="label">市场调研</span>协助组长进行前期 AI 营销领域的资料收集，总结 AIGC 市场应用板块，整理目标用户关键词形成初代消费者画像</li>
+        <li><span class="label">外联沟通</span>与企业分联盟成员建联，落实受访者访谈细节，组织完成 2 场线上 AIGC 深访主持，记录并整理访谈要点</li>
+        <li><span class="label">创意策划</span>以访谈要点联想 Big Idea，参与 AIGC 联盟营销的"AI 新年祝福"创意脑暴，并产出个人策划案、进行竞稿讨论</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section grad-proj">
+  <div class="container" style="max-width: 900px;">
+    <div class="text-center mb-4 reveal">
+      <span class="section-badge light-badge">Projects</span>
+      <h2 class="section-title" style="color:#fff;">校园项目经历</h2>
+      <div class="section-line dark" style="margin: 0 auto 40px;"></div>
+    </div>
+
+    <div class="timeline-block light-card reveal">
+      <div class="tl-header">
+        <span class="tl-title">腾讯程序化广告效果优化项目</span>
+        <span class="tl-subtitle">成员</span>
+        <span class="tl-date">2024.04 - 2024.08</span>
+      </div>
+      <div class="tl-body"><ul>
+        <li><span class="label">内容创作</span>艺考期间为推广学院，完成创意主题互动 H5 推文制作，并在微信朋友圈进行程序化投放</li>
+        <li><span class="label">广告投放</span>投放过程进行人群 A/B 测试，广告曝光数达 2,110,146，一轮测试 CTR 达 3.49%，取得同时段排行第一。后续根据平台工具指标数据进行广告调整，包括：扩大投放地区范围、修改时间、CPM 出价、圈定人群标签进行效果优化</li>
+      </ul></div>
+    </div>
+
+    <div class="timeline-block light-card reveal">
+      <div class="tl-header">
+        <span class="tl-title">"诺苏毡坊" 民族非遗品牌创建创业项目</span>
+        <span class="tl-subtitle">负责人</span>
+        <span class="tl-date">2023.03 - 2024.06</span>
+      </div>
+      <div class="tl-body"><ul>
+        <li><span class="label">市场调研</span>通过 PEST、SWOT 策略了解宏微观市场；开展消费者线上问卷调查，挖掘 Z 世代用户对非遗产品的新需求："轻量、时尚、实用"；用 STP 策略等模型确定"触手可及的非遗"品牌定位</li>
+        <li><span class="label">竞品分析</span>对同类非遗竞品进行分析挖掘产品卖点，围绕消费者需求及品牌定位产出 20+ 原创单品</li>
+        <li><span class="label">渠道推广</span>搭建品牌网站；布局品牌公众号-小红书-抖音媒体矩阵，发布新媒体内容、产品故事等；开展线下校园 DIY 活动</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section grad-act">
+  <div class="container" style="max-width: 900px;">
+    <div class="text-center mb-4 reveal">
+      <span class="section-badge light-badge">Activities</span>
+      <h2 class="section-title" style="color:#fff;">校园组织活动</h2>
+      <div class="section-line dark" style="margin: 0 auto 40px;"></div>
+    </div>
+    <div class="timeline-block light-card reveal">
+      <div class="tl-header">
+        <span class="tl-title">校学生会 · 文艺部干事</span>
+        <span class="tl-date">2023.03 - 2024.03</span>
+      </div>
+      <div class="tl-body"><ul>
+        <li><span class="label">活动策划</span>作为第 38 届广春执行导演之一，策划密室解密主题概念，撰写历史寻宝方向广播剧脚本</li>
+        <li><span class="label">活动执行</span>联系配音演员、筛选选手、跟进选手比赛进度、支持现场灯光设计、歌唱比赛晚会活动场地布置</li>
+        <li><span class="label">宣传物料制作</span>完成选手采访、访谈稿撰写、为选手制作原创预热、投票海报及回顾推文 100 余篇，基础推文阅读量 1000+</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section grad-skill">
+  <div class="container" style="max-width: 960px;">
+    <div class="row g-5">
+      <div class="col-lg-6 reveal">
+        <span class="section-badge light-badge">Skills</span>
+        <h2 class="section-title" style="color:#fff; font-size: 32px;">专业技能</h2>
+        <div class="section-line dark"></div>
+        <div class="skill-group"><h4>语言能力</h4>
+          <span class="skill-tag">四级 550+</span><span class="skill-tag">六级 480+</span><span class="skill-tag">雅思 6.5</span><span class="skill-tag">口语可满足正常交流</span>
+        </div>
+        <div class="skill-group"><h4>软件应用</h4>
+          <span class="skill-tag">PS</span><span class="skill-tag">PR</span><span class="skill-tag">PPT 制作</span><span class="skill-tag">SPSS</span><span class="skill-tag">Office</span><span class="skill-tag">剪映</span><span class="skill-tag">秀米</span><span class="skill-tag">可画</span><span class="skill-tag">AE</span><span class="skill-tag">Atom 网站制作</span>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal">
+        <span class="section-badge light-badge">Awards</span>
+        <h2 class="section-title" style="color:#fff; font-size: 32px;">竞赛获奖</h2>
+        <div class="section-line dark"></div>
+        <div class="award-item"><span class="award-icon">🏆</span>大广赛国家一等奖（视频类）</div>
+        <div class="award-item"><span class="award-icon">🏅</span>学院奖优秀类（文案类）</div>
+        <div class="award-item"><span class="award-icon">🥉</span>全国大学生数字媒体科技作品及创意竞赛国家三等奖</div>
+        <div class="award-item"><span class="award-icon">🥈</span>中国好创意暨全国数字艺术设计大赛全国二等奖</div>
+        <div class="award-item"><span class="award-icon">🥈</span>电子商务大赛省二等奖（负责人）</div>
+        <div class="award-item"><span class="award-icon">🥉</span>互联网+环保"海藻屋"项目省三等奖</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container text-center" style="max-width: 600px;">
+    <div class="reveal">
+      <span class="section-badge">Contact</span>
+      <h2 class="section-title" style="color:#fff;">联系我</h2>
+      <div class="section-line dark" style="margin: 0 auto 30px;"></div>
+    </div>
+    <div class="reveal" style="color: rgba(215,210,235,0.85); font-size: 15px; line-height: 2.4;">
+      <p><i class="bi bi-geo-alt-fill" style="color:#b496dc; margin-right:10px;"></i>北京 & 四川成都 & 西昌</p>
+      <p><i class="bi bi-telephone-fill" style="color:#b496dc; margin-right:10px;"></i>18328841338</p>
+      <p><i class="bi bi-envelope-fill" style="color:#b496dc; margin-right:10px;"></i>2021218033030@cuc.edu.cn</p>
+      <p><i class="bi bi-github" style="color:#b496dc; margin-right:10px;"></i>github.com/Zihanni-33</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="img/tou.png" style="width:26px;height:26px; border-radius:50%; margin-right:6px; vertical-align:middle;">
+  @2025 Chen Zihan | ZiHan_n | All rights reserved
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function() {
+  const ringEl = document.getElementById('ring3d');
+  const stageEl = document.getElementById('ringStage');
+  const heroEl = document.getElementById('hero');
+  const ringText = 'welcome to my website ';
+  const totalChars = 40;
+  const ringRadius = 210;
+  const repeated = ringText.repeat(Math.ceil(totalChars / ringText.length));
+  let html = '';
+  for (let i = 0; i < totalChars; i++) {
+    const angle = (360 / totalChars) * i;
+    html += `<span class="ring-char" style="transform: rotateY(${angle}deg) translateZ(${ringRadius}px);">${repeated[i]}</span>`;
+  }
+  ringEl.innerHTML = html;
+
+  let currentScale = 1;
+  function updateScale() {
+    const w = window.innerWidth;
+    if (w < 480) currentScale = 0.38;
+    else if (w < 768) currentScale = 0.55;
+    else if (w < 1024) currentScale = 0.75;
+    else currentScale = 1;
+  }
+  updateScale();
+  window.addEventListener('resize', updateScale);
+
+  const satEls = document.querySelectorAll('.satellite');
+  const orbitRadius = 340;
+  satEls.forEach((sat, i) => {
+    const baseAngle = (360 / satEls.length) * i;
+    sat.style.transform = `translate(-50%,-50%) rotate(${baseAngle}deg) translateY(${-orbitRadius}px)`;
+  });
+
+  let mouseX = 0, mouseY = 0, targetMX = 0, targetMY = 0;
+  heroEl.addEventListener('mousemove', (e) => {
+    targetMX = (e.clientX / window.innerWidth - 0.5) * 2;
+    targetMY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const maxParticles = 70;
+  function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  class Particle {
+    constructor() {
+      this.reset();
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+    }
+    reset() {
+      this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.4; this.speedY = (Math.random() - 0.5) * 0.4;
+      this.opacity = Math.random() * 0.5 + 0.15;
+      this.fadeSpeed = Math.random() * 0.005 + 0.002;
+      this.fadingIn = Math.random() > 0.5;
+    }
+    update() {
+      this.x += this.speedX; this.y += this.speedY;
+      if (this.fadingIn) { this.opacity += this.fadeSpeed; if (this.opacity >= 0.6) this.fadingIn = false; }
+      else { this.opacity -= this.fadeSpeed; if (this.opacity <= 0.1) this.fadingIn = true; }
+      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    }
+    draw(ctx) {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(180,150,220,${this.opacity})`;
+      ctx.fill();
+    }
+  }
+  for (let i = 0; i < maxParticles; i++) particles.push(new Particle());
+
+  function animate() {
+    requestAnimationFrame(animate);
+    mouseX += (targetMX - mouseX) * 0.03;
+    mouseY += (targetMY - mouseY) * 0.03;
+    stageEl.style.transform = `translate(-50%,-50%) scale(${currentScale}) rotateX(${mouseY * 10}deg) rotateY(${mouseX * 7}deg)`;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(ctx); });
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 120) {
+          ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(150,120,200,${0.07 * (1 - dist/120)})`;
+          ctx.lineWidth = 0.5; ctx.stroke();
+        }
+      }
+    }
+  }
+  animate();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('revealed'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Photo Gallery + Lightbox ──
+  const galleryEl = document.getElementById('photoGallery');
+  const totalPhotos = 12;
+  let photoHTML = '';
+  for (let i = 1; i <= totalPhotos; i++) {
+    photoHTML += `<div class="photo-item" onclick="openLightbox(${i})"><img src="img/person${i}.jpg" alt="Photo ${i}" loading="lazy"></div>`;
+  }
+  galleryEl.innerHTML = photoHTML;
+
+  let currentPhoto = 1;
+  window.openLightbox = function(idx) {
+    currentPhoto = idx;
+    document.getElementById('lightboxImg').src = `img/person${idx}.jpg`;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  window.navLightbox = function(dir) {
+    currentPhoto += dir;
+    if (currentPhoto < 1) currentPhoto = totalPhotos;
+    if (currentPhoto > totalPhotos) currentPhoto = 1;
+    document.getElementById('lightboxImg').src = `img/person${currentPhoto}.jpg`;
+  };
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+  });
+
+})();
+</script>
+
+</body>
 </html>
