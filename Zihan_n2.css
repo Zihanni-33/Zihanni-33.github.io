@@ -379,38 +379,56 @@ a:link {
 #figure_background{
   position: relative;
   width: 100%;
-  height: 280px;
+  height: 320px;
   margin: 0;
   overflow: hidden;
 }
 #fixed{
   position: absolute; inset: 0;
-  background: url("img/Background0.png");
+  background: url("photo%20new/backgroud1.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
-#fixed::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(120,140,220,0.2) 0%, rgba(12,12,26,0.7) 70%);
-}
-.pisces-star {
+.cosmo-star {
   position: absolute;
-  width: 3px; height: 3px;
-  background: #fff; border-radius: 50%;
-  box-shadow: 0 0 6px 2px rgba(180,200,255,0.8), 0 0 14px 4px rgba(150,170,240,0.4);
-  animation: piscesPulse 2.5s ease-in-out infinite;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px 1px rgba(180,200,255,0.9), 0 0 10px 3px rgba(140,160,240,0.5);
+  animation: cosmoPulse 2.8s ease-in-out infinite;
 }
-@keyframes piscesPulse {
-  0%,100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.6); }
+@keyframes cosmoPulse {
+  0%,100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 1; transform: scale(2.2); }
 }
-.pisces-line {
-  position: absolute; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(150,180,240,0.3), transparent);
-  transform-origin: left center;
+.cosmo-planet {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 3px rgba(160,180,230,0.3), 0 0 30px 6px rgba(120,140,210,0.15), inset -4px -2px 6px rgba(0,0,0,0.3);
+  animation: planetFloat 6s ease-in-out infinite;
+}
+@keyframes planetFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.cosmo-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(180,200,240,0.25);
+  transform: rotate(-15deg);
+  box-shadow: 0 0 6px rgba(160,190,230,0.15);
+}
+.cosmo-dust {
+  position: absolute;
+  width: 1.5px; height: 1.5px;
+  border-radius: 50%;
+  background: rgba(200,190,240,0.5);
+  animation: dustFade 2s ease-in-out infinite;
+}
+@keyframes dustFade {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 0.7; }
 }
 
 
