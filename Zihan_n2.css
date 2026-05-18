@@ -1,17 +1,38 @@
 body{
-  background: url("img/Background2.png");
-  background-attachment:fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background: #0c0c1a;
+  color: rgba(220,215,235,0.88);
+  font-family: 'Cormorant Garamond','Georgia','STKaiti','KaiTi',serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+canvas#globalStars {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+
+section, .container, .container-fluid, footer, nav {
+  position: relative; z-index: 1;
 }
 
 
 .nav-link{
     padding:15px 5px;
     transition:0.2s;
-    color:(143,133,168);
-    font-size:18px;
+    color: #c9b8e8;
+    font-size:16px;
+    letter-spacing: 1px;
   }
+  .nav-link:hover { color: #fff !important; }
+  .nav-link.active { color: #fff !important; font-weight: bold; }
+
+  .navbar {
+    background: rgba(15,13,22,0.92) !important;
+    backdrop-filter: blur(12px);
+    opacity: 1 !important;
+  }
+  .navbar-brand { color: #d4c8f0 !important; }
 
 
 .nav-item::after{
@@ -64,8 +85,48 @@ body{
 
 .display-6 {
   font-size: calc(1.375rem + 1.5vw);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.2;
+  font-family: 'Cormorant Garamond','Georgia','STKaiti',serif;
+  color: #e8dcff;
+}
+
+/* ===== Carousel Hero ===== */
+.carousel-hero {
+  position: relative; background: #111128; padding-top: 90px;
+}
+.hero-text-top {
+  text-align: center; padding: 18px 20px 10px;
+}
+.hero-text-top .fight-text {
+  font-family: 'Cormorant Garamond','Georgia',serif;
+  font-size: clamp(32px,4.5vw,56px); font-weight: 700;
+  letter-spacing: 4px; color: #fff;
+  text-shadow: 0 0 30px rgba(200,170,240,0.6), 0 0 60px rgba(180,150,220,0.3);
+  display: block;
+}
+.hero-text-bottom {
+  text-align: center; padding: 10px 20px 18px;
+}
+.hero-text-bottom .inspired-text {
+  font-family: 'Cormorant Garamond','Georgia',serif;
+  font-size: clamp(14px,2vw,20px); font-weight: 400;
+  font-style: italic; color: rgba(220,210,240,0.7); letter-spacing: 2px;
+}
+.carousel-hero .carousel {
+  opacity: 0.9; z-index: 2;
+}
+.carousel-hero .carousel .carousel-inner { max-height: 620px; }
+.carousel-hero .carousel img {
+  width: 100%; height: 100%; object-fit: cover; max-height: 620px;
+}
+
+/* ===== Section Lines ===== */
+.line {
+  border-top: 2px solid rgba(180,150,220,0.5) !important;
+  width: 80px !important;
+  margin: 0 auto 30px !important;
+  color: inherit !important;
 }
 .studio:hover{
     padding-top: 50px;
@@ -201,10 +262,22 @@ a:hover {
 
 
 .studioDetails {
-  border: 8px solid#220088;
-  border-radius: 30px;
-  position: absolute;
-  box-shadow: 0 0 20px -10px rgba(0,0,0,0.5)
+  border: 1px solid rgba(180,150,220,0.2) !important;
+  border-radius: 20px !important;
+  background: rgba(30,28,50,0.9) !important;
+  color: rgba(220,215,235,0.88);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3), 0 0 20px rgba(100,80,160,0.08) !important;
+}
+.studioDetails h2 { color: #e8dcff; }
+.studioDetails h0 { color: #c9b8e8; font-size: 18px; }
+.studioDetails .btn-primary {
+  background: rgba(180,150,220,0.2);
+  border: 1px solid rgba(180,150,220,0.4);
+  color: #d4c8f0;
+}
+.studioDetails .btn-primary:hover {
+  background: rgba(180,150,220,0.35);
+  border-color: #b496dc;
 }
 
 .shadow {
@@ -229,7 +302,7 @@ a:hover {
 
 
 h0 {
-  color:(102,97,136);
+  color: #c9b8e8;
   font-family: "Segoe UI",Arial,sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -241,6 +314,7 @@ h0 {
   font-weight: 400;
   margin: 10px 0;
   text-align: center;
+  color: #b0a0c8;
 }
 
 h2 {
@@ -259,13 +333,13 @@ a:link {
 
 .btn:hover, .btn:focus, .btn.active {
   color: #fff;
-  background-color: #220088;
+  background-color: rgba(180,150,220,0.35);
   outline: none;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #220088;
-  border-color: #220088;
+  color: #d4c8f0;
+  background-color: rgba(180,150,220,0.2);
+  border-color: rgba(180,150,220,0.4);
 }
 
 .the_title {
@@ -273,7 +347,8 @@ a:link {
   font-weight: 900;
   font-size: 2em;
   letter-spacing: 0.300em;
-  color: #2e2d2d;
+  color: #e8dcff;
+  text-shadow: 0 0 10px rgba(180,150,220,0.3);
 }
 
 
@@ -282,7 +357,7 @@ a:link {
   font-family: Source Sans Pro;
   font-weight: 350;
   font-size: 0.9em;
-  color: black;
+  color: #c9b8e8;
   line-height: 0.5em;
 }
 
@@ -294,26 +369,48 @@ a:link {
 
 .left_profile_content {
   padding-top: 1em;
-  color: #220088;
+  color: #c9b8e8;
   height: 5px;
   line-height: 5px;
-padding-bottom: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 
 #figure_background{
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 280px;
   margin: 0;
+  overflow: hidden;
 }
 #fixed{
-  background-image: url("img/Background0.png");
-  height: 20em;
+  position: absolute; inset: 0;
+  background: url("img/Background0.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+}
+#fixed::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(120,140,220,0.2) 0%, rgba(12,12,26,0.7) 70%);
+}
+.pisces-star {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: #fff; border-radius: 50%;
+  box-shadow: 0 0 6px 2px rgba(180,200,255,0.8), 0 0 14px 4px rgba(150,170,240,0.4);
+  animation: piscesPulse 2.5s ease-in-out infinite;
+}
+@keyframes piscesPulse {
+  0%,100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.6); }
+}
+.pisces-line {
+  position: absolute; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(150,180,240,0.3), transparent);
+  transform-origin: left center;
 }
 
 
@@ -461,42 +558,22 @@ padding-bottom: 1.5em;
 .overlay {
   font-family: Helvetica;
   font-size: calc(1.1rem);
-  width:100%;
-  height:100%;
-  background:  #d5d5d5;
-  border-radius: 12px;
+  width:100%; height:100%;
+  background: rgba(20,18,40,0.92);
+  border-radius: 6px;
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-  border-radius: 6px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
 }
 .overlay1 {
   font-family: Helvetica;
   font-size: calc(1.1rem);
-  width:100%;
-  height:100%;
-  background:  #d5d5d5;
-  border-radius: 12px;
+  width:100%; height:100%;
+  background: rgba(20,18,40,0.92);
+  border-radius: 6px;
   cursor: pointer;
   opacity: 0;
   transition: all 1s;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-  border-radius: 6px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;
 }
 .art:hover .overlay{opacity: 0.7}
 .idea:hover  .overlay1 {opacity: 0.7}
@@ -507,7 +584,7 @@ padding-bottom: 1.5em;
     align-items: center;
     display: flex;
     top:40%;
-    color: #006400;
+    color: #d4c8f0;
     flex: column;
     padding-left: 1rem;
   }
@@ -517,7 +594,7 @@ padding-bottom: 1.5em;
       align-items: center;
       display: flex;
       top:40%;
-      color:#220088;
+      color: #d4c8f0;
       flex: column;
       padding-left: 1rem;
     }
@@ -533,6 +610,8 @@ padding-bottom: 1.5em;
 .container-text{
     text-align: center !important
 }
+.container-text a { color: #c9b8e8 !important; }
+.container-text a:hover { color: #fff !important; }
 
 .Line{
   border-top: 3px solid;
@@ -612,41 +691,19 @@ padding-bottom: 1.5em;
     padding-top: 6px;
     text-align: center;
     font-size: 18px;
-    color:rgb(106, 99, 133);
+    color: #c9b8e8;
 
 }
 .card-ots {
   height: 350px;
   width: 350px;
   margin: 0 20px;
-    margin-top: 0px;
-    margin-right: 20px;
-    margin-bottom: 0px;
-    margin-left: 20px;
-  background: white;
-    background-color: white;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-image: none;
-    background-size: auto;
-    background-origin: padding-box;
-    background-clip: border-box;
+  background: rgba(30,28,50,0.9);
+  border: 1px solid rgba(180,150,220,0.15);
   transition: 0.4s;
-    transition-property: all;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-  box-shadow: 0px 0 8px 2px rgba(159, 159, 159, 0.544);
+  box-shadow: 0px 0 8px 2px rgba(100,80,160,0.15);
   border-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
   overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .card-ots .card-t .card-all {
@@ -656,55 +713,36 @@ padding-bottom: 1.5em;
 
  .card-t {
   padding: 0px 20px 10px 20px;
-    padding-top: 0px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-  background: white;
-    background-color: white;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-image: none;
-    background-size: auto;
-    background-origin: padding-box;
-    background-clip: border-box;
+  background: rgba(22,20,36,0.95);
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
-    transition-property: all;
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
 }
 .card-a-title {
-  color: #5b5b5b;
+  color: #b0a0c8;
   font-size: 16px;
   text-align: center;
 }
 .card-text {
-  color: #7b7b7b;
+  color: #9080a8;
   font-size: 14px;
   text-align: center;
 }
 .card-text1 {
-  color: #7b7b7b;
+  color: #9080a8;
   font-size: 14px;
-
 }
 .card-memo {
   text-align: center;
   font-size: 16px;
   font-weight: 500;
-  color: rgba(101, 101, 101, 0.878);
+  color: #8070a0;
 }
 
 .card-ots:hover{
             height: 450px;
-            box-shadow: 0px 0 10px 5px rgb(47,41,83);
+            box-shadow: 0px 0 15px 5px rgba(160,140,220,0.35);
             border-radius: 10px;
-
         }
 
   .card-ots .top-text .card-name {
