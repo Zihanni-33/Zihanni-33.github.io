@@ -1,8 +1,9 @@
 body{
-  background: url("img/Background.png");
-  background-attachment:fixed;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background: #0a0a14;
+  color: rgba(220,215,235,0.88);
+  font-family: 'Cormorant Garamond','Georgia','STKaiti','KaiTi',serif;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 
