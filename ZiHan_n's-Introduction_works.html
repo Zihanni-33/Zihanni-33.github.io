@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body{
+      font-family: Verdana,sans-serif;
+     font-size: 15px;
+     line-height: 1.5;
+    }
+   body {
+   font-family: var(--bs-body-font-family);
+   font-size: var(--bs-body-font-size);
+   font-weight: var(--bs-body-font-weight);
+   line-height: var(--bs-body-line-height);
+   color: var(--bs-body-color);
+   text-align: var(--bs-body-text-align);
+   -webkit-text-size-adjust: 100%;
+ }
+    </style>
+  <!--<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >-->
+  <title>ZiHan_n</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="Zihan_n2.css">
+  <script src="studioGhibli.js"></script>
+  </head>
+
+ <body>
+<canvas id="globalStars"></canvas>
+
+<!--导航Navigation>-->
+<nav id="bar" class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="ZiHan_n's%20Introduction%200.html">
+      <img src="img/tou.png" style="padding-top: -100px;width:70px;height:70px">
+      <span class="nfive">ZiHan_n's Introduction</span>
+    </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+      <div id="navbarNav" class="collapse navbar-collapse nav justify-content-end">
+        <ul class="navbar-nav">
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="ZiHan_n's-Introduction_Home.html">Home</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" aria-current="page" href="ZiHan_n's-Introduction_works.html">Works</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" aria-current="page" href="ZiHan_n's-Introduction_fancies.html">Fancies</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" aria-current="page" href="ZiHan_n's-Introduction_contact.html">Contact</a>
+         </li>
+       </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Carousel Hero -->
+<div class="carousel-hero">
+  <div class="hero-text-top">
+    <span class="fight-text">FIGHT FOR MY LIFE</span>
+  </div>
+  <div id="carouselWorks" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselWorks" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselWorks" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselWorks" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#carouselWorks" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#carouselWorks" data-bs-slide-to="4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <div class="row g-0"><div class="col-4"><img class="d-block w-100" src="photo%20new/1.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/2.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/3.jpg" alt=""></div></div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="row g-0"><div class="col-4"><img class="d-block w-100" src="photo%20new/4.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/5.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/6.jpg" alt=""></div></div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="row g-0"><div class="col-4"><img class="d-block w-100" src="photo%20new/7.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/8.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/9.jpg" alt=""></div></div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="row g-0"><div class="col-4"><img class="d-block w-100" src="photo%20new/10.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/11.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/12.jpg" alt=""></div></div>
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="row g-0"><div class="col-4"><img class="d-block w-100" src="photo%20new/13.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/15.jpg" alt=""></div><div class="col-4"><img class="d-block w-100" src="photo%20new/16.jpg" alt=""></div></div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselWorks" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselWorks" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="hero-text-bottom">
+    <span class="inspired-text">Inspired by everyone around the world</span>
+  </div>
+</div>
+
+<!--作品part1>-->
+<div class="rounded text-center">
+  <h1 class="display-6" style="margin-top:10rem ;font-family:FangSong; font-weight:bolder;">策划案作品</h1>
+  <center>
+    <hr class="line">
+  </center>
+</div>
+
+
+  <!-- 小红书：内容破圈密码 -->
+
+  <!-- 小红书：内容破圈密码 -->
+  <div class="studio container-fluid reveal active" style="margin-bottom:15rem">
+    <div class="studioDetails row m-5 p-5 shadow">
+      <div class="col-lg-6">
+        <h2 style="font-family:FangSong; font-weight:bolder;">小红书：内容破圈密码</h2>
+        <hr class="line">
+        <p style="font-size:23px;"><strong>图书行业商家笔记策略</strong></p>
+        <p><h0>【从流量分发到内容种草的破圈路径】</h0></p>
+        <p>聚焦图书行业在小红书平台的内容营销痛点，通过拆解优质笔记的标题、封面、正文结构及互动因子，提炼出可复用的"破圈密码"。方案覆盖选题策略、视觉调性、关键词布局与投放节奏，帮助图书商家从"货架思维"转向"内容思维"，实现站内种草到转化的完整闭环。</p>
+        <p>核心方法论：笔记因子拆解 &times; 人群画像匹配 &times; 场景化内容矩阵</p>
+        <br>
+        <a class="btn btn-primary" href="ZiHan_n%27s%20Introduction%20details.html"><strong>策划概览</strong></a>
+      </div>
+      <div class="col-lg-6">
+          <div id="carouselXHSW" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img class="d-block w-100 casetu" src="works/1.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/2.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/3.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/4.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/5.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/6.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/7.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/8.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/9.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/10.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/11.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/12.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/13.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/14.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/15.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/16.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/17.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/18.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/19.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/20.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/21.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/22.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/23.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100 casetu" src="works/24.png" alt="" style="border-radius:10px;"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselXHSW" data-bs-slide="prev" style="filter:invert(0.8);"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselXHSW" data-bs-slide="next" style="filter:invert(0.8);"><span class="carousel-control-next-icon"></span></button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 云南白药 独立 -->
+  <div class="studio container-fluid reveal active" style="margin-bottom:15rem">
+    <div class="studioDetails row m-5 p-5 shadow">
+      <div class="col-lg-6">
+        <h2 style="font-family:FangSong; font-weight:bolder;">云南白药礼盒新品策划案</h2>
+        <hr class="line">
+        <p style="font-size:20px;"><strong>"归一法则"</strong></p>
+        <p><h0>【传统药企的年轻化破圈提案】</h0></p>
+        <p>围绕云南白药礼盒产品线，提出"归一法则"核心创意——将传统中医药"天人合一"的哲学转化为现代礼赠场景中的情感价值。方案从消费者送礼痛点切入，通过差异化定位、文化符号提炼与体验式包装设计，为百年药企注入年轻化表达。</p>
+        <p>策略亮点：文化符号现代化 &times; 礼赠场景细分 &times; 体验式包装创新</p>
+        <br>
+        <a class="btn btn-primary" href="ZiHan_n%27s%20Introduction%20details.html"><strong>策划概览</strong></a>
+      </div>
+      <div class="col-lg-6">
+          <div id="carouselYNW" class="carousel slide" data-bs-ride="carousel" style="max-width:300px;margin:0 auto;">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img class="d-block w-100" src="works/yun1.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun2.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun3.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun4.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun5.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun6.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun7.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun8.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun9.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun10.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun11.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun12.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun13.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun14.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun15.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun16.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun17.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun18.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun19.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun20.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun21.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun22.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun23.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun24.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun25.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/yun26.png" alt="" style="border-radius:10px;"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselYNW" data-bs-slide="prev" style="filter:invert(0.8);"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselYNW" data-bs-slide="next" style="filter:invert(0.8);"><span class="carousel-control-next-icon"></span></button>
+          </div>
+      </div>
+    </div>
+  </div>
+<!-- 抱抱公交 + 雀巢商赛 双栏 -->
+  <div class="studio container-fluid reveal active" style="margin-bottom:15rem">
+    <div class="studioDetails row m-5 p-5 shadow">
+      <div class="col-lg-6" style="border-right:1px solid rgba(180,150,220,0.15);padding-right:24px;">
+        <h2 style="font-family:FangSong; font-weight:bolder;">Hi，抱抱</h2>
+        <hr class="line">
+        <p style="font-size:20px;"><strong>城市燕郊公交品牌打造</strong></p>
+        <p><h0>【让公交成为城市拥抱的载体】</h0></p>
+        <p>以"抱抱"为品牌IP，重新定义燕郊公交的公众认知——从交通工具升级为"城市陪伴者"。方案围绕品牌命名、视觉系统、车身包装、车内体验及社媒传播五个维度展开，将冷硬的公交转化为有温度的城市情感触点。</p>
+        <p>策略亮点：IP人格化设计 &times; 场景化触点布局 &times; 城市情感叙事</p>
+        <br>
+        <div class="text-center">
+          <div id="carouselBaoW" class="carousel slide" data-bs-ride="carousel" style="max-width:300px;margin:0 auto;">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img class="d-block w-100" src="works/bao1.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao2.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao3.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao4.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao5.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao6.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao7.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao8.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao9.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao10.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao11.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao12.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao13.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao14.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao15.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao16.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao17.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao18.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao19.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao20.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao21.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="works/bao22.png" alt="" style="border-radius:10px;"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBaoW" data-bs-slide="prev" style="filter:invert(0.8);"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBaoW" data-bs-slide="next" style="filter:invert(0.8);"><span class="carousel-control-next-icon"></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" style="padding-left:24px;">
+        <h2 style="font-family:FangSong; font-weight:bolder;">雀巢商赛</h2>
+        <hr class="line">
+        <p style="font-size:23px;"><strong>主题来源</strong></p>
+        <p><h0>【"超困星人退！退！退！"解救计划】</h0></p>
+        <p>调研表明，大学生普遍日常作息不规律，喝咖啡主要集中在犯困场景。因此我们将痛点聚焦在"困"字上，围绕它展开营销主题联想。打造"年轻化"——探索年轻人感兴趣的形式，目标群体为大学生——热爱潮流元素偏好新鲜玩法：漫画H5+IP形象。</p>
+        <p>策略亮点：校园场景洞察 &times; 漫画H5互动 &times; IP人格化传播</p>
+        <br>
+        <div class="text-center">
+          <div id="carouselQueW" class="carousel slide" data-bs-ride="carousel" style="max-width:300px;margin:0 auto;">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img class="d-block w-100" src="img/雀1.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="img/雀2.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="img/雀3.png" alt="" style="border-radius:10px;"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselQueW" data-bs-slide="prev" style="filter:invert(0.8);"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselQueW" data-bs-slide="next" style="filter:invert(0.8);"><span class="carousel-control-next-icon"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 天猫文娱 + 可比克 双栏 -->
+  <div class="studio container-fluid reveal active" style="margin-bottom:15rem">
+    <div class="studioDetails row m-5 p-5 shadow">
+      <div class="col-lg-6" style="border-right:1px solid rgba(180,150,220,0.15);padding-right:24px;">
+        <h2 style="font-family:FangSong; font-weight:bolder;">天猫文娱校园</h2>
+        <hr class="line">
+        <p style="font-size:23px;"><strong>主题来源</strong></p>
+        <p><h0>【为了新学期能蜕变有多拼——探索你的&infin;美】</h0></p>
+        <p>关注到消费者对美妆的精细化诉求，创造"以人为核心的个性化理念"是打动消费者的关键。后疫情时代，消费者希望用有限时间拥有多样体验。根据美瞳特有的美妆属性，从不同妆容搭配不同美瞳出发——美瞳帮助消费者探索自己不同种的"美"，让"美"不设限。</p>
+        <p>策略亮点：校园营销 &times; 私域留存转化 &times; 个性化矩阵</p>
+        <br>
+        <div class="text-center">
+          <div id="carouselTmaW" class="carousel slide" data-bs-ride="carousel" style="max-width:300px;margin:0 auto;">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img class="d-block w-100" src="img/阿1.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="img/阿2.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="img/阿3.png" alt="" style="border-radius:10px;"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTmaW" data-bs-slide="prev" style="filter:invert(0.8);"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTmaW" data-bs-slide="next" style="filter:invert(0.8);"><span class="carousel-control-next-icon"></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" style="padding-left:24px;">
+        <h2 style="font-family:FangSong; font-weight:bolder;">可比克比赛</h2>
+        <hr class="line">
+        <p style="font-size:23px;"><strong>主题来源</strong></p>
+        <p><h0>【可比克"花颜纯切"愿陪你一起"花"点时间】</h0></p>
+        <p>你是否总在各个角色间切换不停，忙着成为大众口中的"你"，却发现做回真实的自己变得遥不可及？通过市场环境分析+消费者洞察+创意设计提案，做回真实自己/遇见独特自己/爱上多彩自己。可比克"花颜纯切"愿陪你一起"花"点时间，遇见属于自己的小众而独特的美好。</p>
+        <p>策略亮点：产品创新 &times; 多学科交融 &times; 情感化品牌叙述</p>
+        <br>
+        <div class="text-center">
+          <div id="carouselKbkW" class="carousel slide" data-bs-ride="carousel" style="max-width:300px;margin:0 auto;">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img class="d-block w-100" src="img/花1.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="img/花2.png" alt="" style="border-radius:10px;"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="img/花3.png" alt="" style="border-radius:10px;"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselKbkW" data-bs-slide="prev" style="filter:invert(0.8);"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselKbkW" data-bs-slide="next" style="filter:invert(0.8);"><span class="carousel-control-next-icon"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cosmic Divider -->
+<figure id="figure_background">
+  <div id="fixed"></div>
+  <div id="piscesContainer" style="position:absolute;inset:0;z-index:2;pointer-events:none;"></div>
+</figure>
+
+
+<!--证书墙-->
+<div class="container-fluid rounded text-center" style="position:relative;z-index:1;">
+  <h1 class="display-6" style="padding-top:5rem;font-family:FangSong;font-weight:bolder;">获奖证书墙</h1>
+  <center><hr class="line"></center>
+</div>
+
+<div class="cert-cosmos">
+  <!-- Orbit ring SVGs -->
+  <svg class="cert-orbits" viewBox="0 0 700 700">
+    <circle cx="350" cy="350" r="180" fill="none" stroke="rgba(200,180,240,0.35)" stroke-width="1.5" stroke-dasharray="6,14"/>
+    <circle cx="350" cy="350" r="310" fill="none" stroke="rgba(200,180,240,0.28)" stroke-width="1.5" stroke-dasharray="4,18"/>
+  </svg>
+
+  <!-- Center sun -->
+  <div class="cert-sun">
+    <div class="cert-sun-glow"></div>
+    <div class="cert-sun-core">
+      <span>获</span><span>奖</span><span>证</span><span>书</span>
+    </div>
+  </div>
+
+  <!-- Certificate nodes -->
+  <div class="cert-nodes-container">
+    
+        <div class="cert-node" style="--tx:0px; --ty:-180px; --delay:0.0s;" data-angle="-90.0" data-radius="180">
+          <div class="cert-card">
+            <a href="works/阿里挑战赛全国50强.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/阿里挑战赛全国50强.jpg" alt="阿里挑战赛" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">阿里挑战赛</div>
+            <div class="cert-sub">全国50强</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:171px; --ty:-56px; --delay:0.12s;" data-angle="-18.0" data-radius="180">
+          <div class="cert-card">
+            <a href="works/大创结项证书.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/大创结项证书.jpg" alt="国家级大创" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">国家级大创</div>
+            <div class="cert-sub">结项证书</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:106px; --ty:146px; --delay:0.24s;" data-angle="54.0" data-radius="180">
+          <div class="cert-card">
+            <a href="works/大广赛可画国一.png" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/大广赛可画国一.png" alt="大广赛可画" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">大广赛可画</div>
+            <div class="cert-sub">国家一等奖</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:-106px; --ty:146px; --delay:0.36s;" data-angle="126.0" data-radius="180">
+          <div class="cert-card">
+            <a href="works/大广赛可画省二等奖.png" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/大广赛可画省二等奖.png" alt="大广赛可画" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">大广赛可画</div>
+            <div class="cert-sub">省二等奖</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:-171px; --ty:-56px; --delay:0.48s;" data-angle="198.0" data-radius="180">
+          <div class="cert-card">
+            <a href="works/国家奖学金.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/国家奖学金.jpg" alt="国家奖学金" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">国家奖学金</div>
+            <div class="cert-sub">教育部</div>
+          </div>
+        </div>
+    
+        <div class="cert-node" style="--tx:135px; --ty:-279px; --delay:0.3s;" data-angle="-64.28571428571428" data-radius="310">
+          <div class="cert-card">
+            <a href="works/雀巢挑战.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/雀巢挑战.jpg" alt="雀巢挑战赛" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">雀巢挑战赛</div>
+            <div class="cert-sub">认证证书</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:302px; --ty:-69px; --delay:0.42s;" data-angle="-12.857142857142854" data-radius="310">
+          <div class="cert-card">
+            <a href="works/专利.png" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/专利.png" alt="专利证书" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">专利证书</div>
+            <div class="cert-sub">知识产权</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:242px; --ty:193px; --delay:0.54s;" data-angle="38.57142857142858" data-radius="310">
+          <div class="cert-card">
+            <a href="works/暑期实践证书.png" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="works/暑期实践证书.png" alt="暑期实践" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">暑期实践</div>
+            <div class="cert-sub">优秀证书</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:0px; --ty:310px; --delay:0.6599999999999999s;" data-angle="90.0" data-radius="310">
+          <div class="cert-card">
+            <a href="img/brand.png" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="img/brand.png" alt="品牌数字营销" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">品牌数字营销</div>
+            <div class="cert-sub">策略分析</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:-242px; --ty:193px; --delay:0.78s;" data-angle="141.42857142857144" data-radius="310">
+          <div class="cert-card">
+            <a href="img/quechao.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="img/quechao.jpg" alt="雀巢咖啡" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">雀巢咖啡</div>
+            <div class="cert-sub">校园营销赛</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:-302px; --ty:-69px; --delay:0.8999999999999999s;" data-angle="192.8571428571429" data-radius="310">
+          <div class="cert-card">
+            <a href="img/zhijiao.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="img/zhijiao.jpg" alt="小瓢虫支教队" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">小瓢虫支教队</div>
+            <div class="cert-sub">暑期实践</div>
+          </div>
+        </div>
+        <div class="cert-node" style="--tx:-135px; --ty:-279px; --delay:1.02s;" data-angle="244.28571428571428" data-radius="310">
+          <div class="cert-card">
+            <a href="img/ali.jpg" target="_blank">
+              <div class="cert-img-wrap">
+                <img src="img/ali.jpg" alt="阿里文娱" loading="lazy">
+              </div>
+            </a>
+            <div class="cert-label">阿里文娱</div>
+            <div class="cert-sub">美瞳系列活动</div>
+          </div>
+        </div>
+  </div>
+</div>
+
+<style>
+.cert-cosmos {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 750px; height: 750px;
+  margin: 0 auto 80px;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 50%, rgba(160,140,210,0.1) 0%, transparent 55%);
+  border-radius: 50%;
+  box-shadow: 0 0 80px rgba(140,120,200,0.08), 0 0 150px rgba(120,100,180,0.04);
+}
+
+.cert-orbits {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  animation: orbitSlowSpin 60s linear infinite;
+}
+@keyframes orbitSlowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Center Sun */
+.cert-sun {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 120px; height: 120px;
+  display: flex; align-items: center; justify-content: center;
+}
+.cert-sun-glow {
+  position: absolute; inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,170,240,0.2) 0%, rgba(160,140,210,0.08) 40%, transparent 70%);
+  animation: sunGlow 3s ease-in-out infinite;
+}
+@keyframes sunGlow {
+  0%,100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+.cert-sun-core {
+  position: relative; z-index: 2;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(220,200,255,0.5) 0%, rgba(30,28,55,0.95) 60%);
+  border: 1.5px solid rgba(180,150,220,0.5);
+  box-shadow: 0 0 30px rgba(160,140,210,0.35), 0 0 60px rgba(140,120,200,0.15);
+  display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center;
+  padding: 12px;
+  gap: 2px;
+}
+.cert-sun-core span {
+  font-family: 'Cormorant Garamond','Georgia','STKaiti',serif;
+  font-size: 20px; font-weight: 700;
+  color: #e8dcff;
+  text-shadow: 0 0 8px rgba(200,170,240,0.6);
+  line-height: 1;
+}
+
+/* Nodes container */
+.cert-nodes-container {
+  position: absolute; inset: 0;
+}
+
+.cert-node {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty)));
+  opacity: 0;
+  animation: certNodeIn 0.7s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+  animation-delay: var(--delay);
+  transition: transform 0.3s ease;
+}
+@keyframes certNodeIn {
+  from { opacity: 0; transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.5); }
+  to { opacity: 1; transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1); }
+}
+
+.cert-node:hover {
+  z-index: 30;
+}
+
+.cert-card {
+  width: 140px;
+  background: rgba(25,23,44,0.92);
+  border: 1px solid rgba(180,150,220,0.2);
+  border-radius: 14px;
+  padding: 7px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.cert-card:hover {
+  transform: scale(1.15);
+  border-color: rgba(200,180,240,0.6);
+  box-shadow: 0 0 30px rgba(170,150,220,0.4), 0 8px 30px rgba(100,70,150,0.3);
+  z-index: 30;
+}
+.cert-img-wrap {
+  width: 100%; height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  background: rgba(15,13,30,0.9);
+}
+.cert-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.cert-card:hover .cert-img-wrap img {
+  transform: scale(1.08);
+}
+.cert-label {
+  font-family: 'Cormorant Garamond','Georgia',serif;
+  font-size: 13px; font-weight: 700;
+  color: #e0d8f8;
+  line-height: 1.3;
+}
+.cert-sub {
+  font-size: 10.5px;
+  color: rgba(170,150,210,0.7);
+  font-style: italic;
+}
+
+/* Connection lines between nodes (SVG-based via JS) */
+.cert-lines-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .cert-cosmos { height: auto; padding: 80px 10px 40px; }
+  .cert-orbits { display: none; }
+  .cert-sun { position: relative; top: auto; left: auto; transform: none; margin: 0 auto 30px; }
+  .cert-nodes-container { position: static; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .cert-node { position: static; transform: none !important; opacity: 1; }
+  .cert-card { width: 115px; }
+  .cert-img-wrap { height: 80px; }
+}
+</style>
+
+<script>
+(function() {
+  const cosmos = document.querySelector('.cert-cosmos');
+  if (!cosmos) return;
+
+  function drawLines() {
+    // Remove old canvas
+    const oldCanvas = cosmos.querySelector('.cert-lines-canvas');
+    if (oldCanvas) oldCanvas.remove();
+
+    const canvas = document.createElement('canvas');
+    canvas.className = 'cert-lines-canvas';
+    canvas.width = cosmos.offsetWidth;
+    canvas.height = cosmos.offsetHeight;
+    cosmos.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    // Draw lines from center to each node
+    const nodes = cosmos.querySelectorAll('.cert-node');
+    const positions = [];
+    nodes.forEach(node => {
+      const rect = node.getBoundingClientRect();
+      const cosmosRect = cosmos.getBoundingClientRect();
+      const nx = rect.left + rect.width/2 - cosmosRect.left;
+      const ny = rect.top + rect.height/2 - cosmosRect.top;
+      positions.push({ x: nx, y: ny });
+
+      // Line from center to node
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.lineTo(nx, ny);
+      ctx.strokeStyle = 'rgba(200,180,240,0.2)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // Connect adjacent nodes in same ring
+    // Inner ring (first 5 nodes) and outer ring (next 7 nodes)
+    function connectRing(start, count) {
+      for (let i = start; i < start + count; i++) {
+        const j = (i + 1 - start) % count + start;
+        if (i < positions.length && j < positions.length) {
+          ctx.beginPath();
+          ctx.moveTo(positions[i].x, positions[i].y);
+          ctx.lineTo(positions[j].x, positions[j].y);
+          ctx.strokeStyle = 'rgba(200,180,240,0.18)';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+    connectRing(0, 5);
+    connectRing(5, 7);
+  }
+
+  drawLines();
+  window.addEventListener('resize', drawLines);
+})();
+</script>
+
+
+  <footer>
+   <div class=" container-fluid" style="background: rgba(12,11,22,0.95); backdrop-filter: blur(10px);">
+      <div class="row">
+        <hr>
+        <div  class="col-sm-12 col-md-4 footerp" style="margin-bottom: 60px；">
+         <h2 style="color:white">
+
+           <strong>ZiHan_na| All rights reserved</strong>
+         </h2>
+          <a href="#">Home</a>
+          |
+          <a href="#">Works</a>
+          |
+          <a href="#">Fancies</a>
+          |
+          <a href="#">Contact</a>
+          <p style="padding-top:20px;">
+            <img src="img/tou.png"style="width:10%;height:10%">
+          @2023 chenzihan</p>
+         </div>
+
+           <div class="col-md-4 pt-3 pb-3" >
+
+               <i class="bi bi-github"style="padding-top:1rem;">
+                <a href="https://github.com/Zihanni-33/Creative_Interaction_Design_2023">
+                  <span style="padding-left: 1rem;">
+                  Zihanni-33
+                </span>
+                </a>
+               </i>
+
+        <p ><i class="bi bi-geo-alt-fill"><span style="padding-left: 1rem;">北京&上海&成都</span></i></p>
+        <p ><i class="bi bi-telephone-fill"></i><span style="padding-left: 1rem;">18621342915</span></i></p>
+        <p><i class="bi bi-envelope-fill"><span style="padding-left: 1rem;">1942107823@qq.com</span></i></p>
+
+      </div>
+
+
+           <div class="col-md-4 pt-3 pb-4" style="padding-left:3rem;padding-right:3rem;">
+           <p><strong>关于我</strong></p>
+           <p style="color:#c9c2a79b ;font-family:SimSun">
+           喜欢沉思创意|合作出成果|擅长拍人像|擅长剪辑做图（自我觉得）</p>
+           <p style="color:#c9c2a79b ;padding-bottom: 1rem;font-family:SimSun">是在6月份，因为超多事情而逐渐没有喜乐和痛苦的麻木的广告-kpop大学生，以震碎ddl的心态才能依旧稍微平和地地活着？（不知道自己在说什么*__*）</p>
+
+           <a href="#"><i class="bi bi-facebook" href="#"></i></a>
+           <a href="#"><i class="bi bi-instagram"></i></a>
+           <a href="#"><i class="bi bi-twitter"></i></a>
+           <a href="#"><i class="bi bi-whatsapp"></i></a>
+       </div>
+     </div>
+   </hr>
+ </div>
+
+
+</footer>
+
+<!-- Global Starfield -->
+<script>
+(function() {
+  const starsCanvas = document.getElementById('globalStars');
+  if (starsCanvas) {
+    const starsCtx = starsCanvas.getContext('2d');
+    let stars = [];
+    const maxStars = 120;
+    function resizeStars() { starsCanvas.width = window.innerWidth; starsCanvas.height = Math.max(document.body.scrollHeight, window.innerHeight); }
+    resizeStars();
+    window.addEventListener('resize', () => { resizeStars(); initStars(); });
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < maxStars; i++) {
+        stars.push({
+          x: Math.random() * starsCanvas.width,
+          y: Math.random() * starsCanvas.height,
+          r: Math.random() * 1.5 + 0.3,
+          twinkle: Math.random() * Math.PI * 2,
+          speed: Math.random() * 0.02 + 0.005
+        });
+      }
+    }
+    initStars();
+    function drawStars() {
+      starsCtx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
+      stars.forEach(s => {
+        s.twinkle += s.speed;
+        const alpha = 0.2 + Math.sin(s.twinkle) * 0.2;
+        starsCtx.beginPath();
+        starsCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        starsCtx.fillStyle = `rgba(180,160,220,${alpha})`;
+        starsCtx.fill();
+      });
+      requestAnimationFrame(drawStars);
+    }
+    drawStars();
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(() => { resizeStars(); initStars(); scrollTicking = false; });
+        scrollTicking = true;
+      }
+    });
+  }
+
+  // Cosmic Divider - image provides the cosmos
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

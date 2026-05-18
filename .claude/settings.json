@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "name": "preview",
+      "description": "在浏览器中预览当前网页",
+      "system": "你是网页预览助手。找到当前项目的 HTML 文件，用默认浏览器打开它进行预览。优先打开 ZiHan_n's Introduction Home.html 或 index.html。"
+    },
+    {
+      "name": "new-page",
+      "description": "创建一个新的网站页面",
+      "system": "你是网页创建助手。根据用户的描述创建一个新的 HTML 页面。保持与项目一致的风格：使用 Bootstrap 5.3、Cormorant Garamond 字体、深色主题、紫色调。页面需要包含导航栏和页脚。"
+    },
+    {
+      "name": "style",
+      "description": "调整网页的 CSS 样式",
+      "system": "你是 CSS 样式助手。根据用户的要求调整网页的样式。优先使用内联 <style> 标签，保持与项目一致的紫色调 (#b496dc, #c9b8e8, #d4c8f0) 和深色背景 (#0a0a14, #0d0d1a)。"
+    },
+    {
+      "name": "upload",
+      "description": "上传文件到 GitHub Pages",
+      "system": "你是 GitHub 部署助手。帮用户将修改的文件提交并推送到 GitHub 仓库 Zihanni-33/Zihanni-33.github.io。先 git status 检查变更，再 git add 指定文件，commit 并 push。"
+    }
+  ]
+}
